@@ -1,0 +1,118 @@
+//
+//  MainViewController.swift
+//  AnyPhone
+//
+//  Created by Fosco Marotto on 5/6/15.
+//  Copyright (c) 2015 parse. All rights reserved.
+//
+
+import UIKit
+import Parse
+
+class MainViewController: UIViewController {
+
+  @IBOutlet weak var usernameLabel: UILabel!
+  @IBOutlet weak var nameTextField: UITextField!
+
+  @IBOutlet weak var setting1: UISwitch!
+  @IBOutlet weak var setting2: UISwitch!
+  @IBOutlet weak var setting3: UISwitch!
+
+  @IBOutlet weak var saveSettingsButton: UIButton!
+
+  var user: PFUser? = PFUser.currentUser()
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    nameTextField.delegate = self
+    saveSettingsButton.layer.cornerRadius = 3
+    if let user = self.user {
+      usernameLabel.text = user.username
+      if let name = user["name"] as? String {
+        nameTextField.text = name
+      }
+      checkSettingsForUser(user)
+      delay(0.4, closure: { () -> () in
+        self.goToReq()
+      })
+    } else {
+      dismissViewControllerAnimated(true, completion: nil)
+    }
+  }
+
+  override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    return .LightContent
+  }
+
+  @IBAction func didTapLogOut(sender: AnyObject) {
+    PFUser.logOutInBackgroundWithBlock { error in
+      self.dismissViewControllerAnimated(true, completion: nil)
+    }
+  }
+
+  @IBAction func didTapSaveSettings(sender: AnyObject) {
+    if let user = self.user {
+      if nameTextField.text != "" {
+        user["name"] = nameTextField.text
+      }
+      if checkSetting(user, settingName: "flower") != setting1.on {
+        user["flower"] = setting1.on
+      }
+      if checkSetting(user, settingName: "edible") != setting2.on {
+        user["edible"] = setting2.on
+      }
+      if checkSetting(user, settingName: "concentrate") != setting3.on {
+        user["concentrate"] = setting3.on
+      }
+      user.saveEventually()
+      NSLog("saving " );
+      
+      self.goToReq()
+      
+    } else {
+      dismissViewControllerAnimated(true, completion: nil)
+    }
+  }
+  
+  func goToReq(){
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let vc = storyboard.instantiateViewControllerWithIdentifier("RequestViewController")
+    self.presentViewController(vc, animated: true, completion: nil)
+  }
+
+  func checkSetting(user: PFUser, settingName : String) -> Bool {
+    if let value = user[settingName] as? Bool {
+      return value
+    }
+    return false
+  }
+
+  func checkSettingsForUser(user: PFUser) {
+    if checkSetting(user, settingName: "setting1") {
+      setting1.setOn(true, animated: false)
+    }
+    if checkSetting(user, settingName: "setting2") {
+      setting2.setOn(true, animated: false)
+    }
+    if checkSetting(user, settingName: "setting3") {
+      setting3.setOn(true, animated: false)
+    }
+  }
+}
+
+func delay(delay:Double, closure:()->()) {
+  dispatch_after(
+    dispatch_time(
+      DISPATCH_TIME_NOW,
+      Int64(delay * Double(NSEC_PER_SEC))
+    ),
+    dispatch_get_main_queue(), closure)
+}
+
+extension MainViewController : UITextFieldDelegate {
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    nameTextField.resignFirstResponder()
+    return true
+  }
+}

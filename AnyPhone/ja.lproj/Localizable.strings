@@ -1,0 +1,35 @@
+/* 
+  Strings.strings
+  AnyPhone
+
+  Created by Eric Nakagawa on 6/16/15.
+  Copyright (c) 2015 parse. All rights reserved.
+*/
+
+title = "AnyPhone - エニーフォン";
+numberDefault = "090-1234-5678";
+enterPhone = "ログインするには電話番号を入力してください。";
+enterPhoneExtra = "この例は、米国の11桁と日本の10桁の番号に限定されています。";
+buttonSubmit = "続ける";
+buttonVerify = "確認";
+warningPhone = "市外局番をまたは日本の11桁の電話番号を入力してください。";
+warningTwilio = "問題が発生しました。お客様のTwilio設定を確認してください。";
+warningGeneral = "問題が発生しました。もう一度試してください。";
+warningNoNumber = "携帯番号の入力をお忘れです。";
+warningCodeLength = "お客様の電話番号へ送信されたテキストメッセージに記載の4桁のコードを入力してください。";
+warningCodeInvalid = "その確認コードは正しくありません。";
+messageWelcomeDashboard = "ダッシュボードへようこそ。";
+enterCode = "4桁の確認コードを入力してください";
+enterCodeExtra = "SMSメッセージにてこちらへ送信されました";
+emailLogin = "あなたのエニーフォンのログインコードは";
+dashboardWelcome = "ダシボールド　へ　ようこそ";
+dashboardNumber = "あなたのばんごう";
+dashboardName = "あなたのなまえ";
+dashboardNameHint = "ニーク　フューリー";
+dashboardSetting1 = "オービトル　ツラキング グリド";
+dashboardSetting2 = "アイヨン　リジョン";
+dashboardSetting3 = "シェタ　プロトコル";
+dashboardUpdate = "アップデート";
+dashboardFinished = "終わりましたか？";
+dashboardLogout = "ログアウト";
+alertOK = "はい";

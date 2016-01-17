@@ -1,0 +1,35 @@
+/* 
+  Strings.strings
+  AnyPhone
+
+  Created by Eric Nakagawa on 6/16/15.
+  Copyright (c) 2015 parse. All rights reserved.
+*/
+
+title = "AnyPhone";
+numberDefault = "555-333-6726";
+enterPhone = "Please enter your phone number to log in.";
+enterPhoneExtra = "This example is limited to 10-digit US number.";
+buttonSubmit = "Continue";
+buttonVerify = "Verify";
+warningPhone = "You must enter a 10-digit US phone number including area code.";
+warningTwilio = "Something went wrong. Please check your Twilio configuration.";
+warningGeneral = "Something went wrong. Please try again.";
+warningNoNumber = "You forgot to enter your mobile number.";
+warningCodeLength = "You must enter a 4 digit code texted to your phone number.";
+warningCodeInvalid = "That verification code is not valid.";
+messageWelcomeDashboard = "Welcome to your Dashboard";
+enterCode = "Enter the 4-digit confirmation code";
+enterCodeExtra = "It was sent in an SMS message to";
+emailLogin = "Your login code for AnyPhone is";
+dashboardWelcome = "Welcome to your Dashboard";
+dashboardNumber = "Your Number";
+dashboardName = "Your Name";
+dashboardNameHint = "Nick Fury";
+dashboardSetting1 = "Orbital Tracking Grid";
+dashboardSetting2 = "Iron Legion";
+dashboardSetting3 = "Theta Protocol";
+dashboardUpdate = "Update";
+dashboardFinished = "Are you finished?";
+dashboardLogout = "Logout";
+alertOK = "OK";
