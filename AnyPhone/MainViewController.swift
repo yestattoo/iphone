@@ -33,9 +33,6 @@ class MainViewController: UIViewController {
         nameTextField.text = name
       }
       checkSettingsForUser(user)
-      delay(0.4, closure: { () -> () in
-        self.goToReq()
-      })
     } else {
       dismissViewControllerAnimated(true, completion: nil)
     }
@@ -89,13 +86,16 @@ class MainViewController: UIViewController {
   }
 
   func checkSettingsForUser(user: PFUser) {
-    if checkSetting(user, settingName: "setting1") {
+    if checkSetting(user, settingName: "flower") {
       setting1.setOn(true, animated: false)
+      delay(0.4, closure: { () -> () in
+        self.goToReq()
+      })
     }
-    if checkSetting(user, settingName: "setting2") {
+    if checkSetting(user, settingName: "edible") {
       setting2.setOn(true, animated: false)
     }
-    if checkSetting(user, settingName: "setting3") {
+    if checkSetting(user, settingName: "concentrate") {
       setting3.setOn(true, animated: false)
     }
   }

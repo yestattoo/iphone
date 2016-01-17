@@ -9,7 +9,7 @@
         <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="AnyPhone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="BudHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -37,7 +37,7 @@
         <!--Login View Controller-->
         <scene sceneID="h7o-sp-qnV">
             <objects>
-                <viewController id="4K7-kW-uU5" customClass="LoginViewController" customModule="AnyPhone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4K7-kW-uU5" customClass="LoginViewController" customModule="BudHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uzV-x9-Eam"/>
                         <viewControllerLayoutGuide type="bottom" id="dRX-hP-X14"/>
@@ -151,7 +151,7 @@
         <!--Main View Controller-->
         <scene sceneID="MMT-Zs-Ewn">
             <objects>
-                <viewController id="mL8-Zg-hMd" customClass="MainViewController" customModule="AnyPhone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mL8-Zg-hMd" customClass="MainViewController" customModule="BudHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mku-0x-JpD"/>
                         <viewControllerLayoutGuide type="bottom" id="jeO-Hb-GV1"/>
@@ -449,16 +449,16 @@
         <!--Request View Controller-->
         <scene sceneID="ZVC-Vi-9oT">
             <objects>
-                <viewController storyboardIdentifier="RequestViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VdK-rM-UKF" customClass="RequestViewController" customModule="AnyPhone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RequestViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VdK-rM-UKF" customClass="RequestViewController" customModule="BudHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Ub-f3-GMe"/>
                         <viewControllerLayoutGuide type="bottom" id="Xr5-hV-F47"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7b6-oN-OPW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWj-LZ-M4o">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWj-LZ-M4o">
                                 <rect key="frame" x="26" y="307" width="322" height="53"/>
                                 <color key="backgroundColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
@@ -499,6 +499,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2HL-Pd-wPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="795.5" y="806.5"/>
+        </scene>
+        <!--Order View Controller-->
+        <scene sceneID="det-Hl-kuH">
+            <objects>
+                <viewController storyboardIdentifier="OrderViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1LC-cI-ZKE" customClass="OrderViewController" customModule="BudHero" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kIV-2Z-flh"/>
+                        <viewControllerLayoutGuide type="bottom" id="c2l-bP-nX4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NoF-2c-WGY">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your BudTender 'Chris' is on the way" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="160.5" translatesAutoresizingMaskIntoConstraints="NO" id="6gV-vi-lIz">
+                                <rect key="frame" x="25" y="202" width="334" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" red="0.1529411765" green="0.0" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="50" y="20" width="263.5" height="94"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eht-JG-zJc">
+                                <rect key="frame" x="26" y="307" width="322" height="53"/>
+                                <color key="backgroundColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="50" y="122" width="63" height="35"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="30" y="332.5" width="606" height="35"/>
+                                </variation>
+                                <connections>
+                                    <action selector="didTapSendCodeButton" destination="4K7-kW-uU5" eventType="touchUpInside" id="p5A-Qr-8lr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="6gV-vi-lIz"/>
+                                <exclude reference="Eht-JG-zJc"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="6gV-vi-lIz"/>
+                                <include reference="Eht-JG-zJc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="Eht-JG-zJc" id="I0U-2O-JRH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ao-S3-TOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1663.5" y="612"/>
         </scene>
     </scenes>
     <resources>

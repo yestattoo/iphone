@@ -67,15 +67,17 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate {
     }
     */
   
+  func goToReq(){
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let vc = storyboard.instantiateViewControllerWithIdentifier("OrderViewController")
+    self.presentViewController(vc, animated: true, completion: nil)
+  }
+  
   func sendRequest(){
     PFCloud.callFunctionInBackground("request", withParameters: ["location" : self.reallocation!], block: { (object: AnyObject?, error) -> Void in
       if error == nil {
         
-        let alert = UIAlertView()
-        alert.title = "Request Sent!"
-        alert.message = "Your bud is on the way!"
-        alert.addButtonWithTitle("Thanks!")
-        alert.show()
+        self.goToReq()
         
       } else {
         NSLog("sent")
