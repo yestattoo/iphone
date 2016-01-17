@@ -9,7 +9,13 @@
 import UIKit
 import Parse
 
-class RequestViewController: UIViewController {
+class RequestViewController: UIViewController, CLLocationManagerDelegate {
+  
+  var manager: OneShotLocationManager?
+  var reallocation : [NSString:NSString]?
+  
+  
+  
   @IBOutlet weak var requestButton: UIButton!
 
     override func viewDidLoad() {
@@ -21,26 +27,35 @@ class RequestViewController: UIViewController {
   
   func buttonAction(sender:UIButton!)
   {
-    NSLog("Tapped")
     
-    PFCloud.callFunctionInBackground("request", withParameters: ["address" : "934 Howard Street SF CA"], block: { (object: AnyObject?, error) -> Void in
-      if error == nil {
-
-      } else {
-        NSLog("sent")
-        // Do error handling
-      }
-    })
-    
-    
+    self.sendRequest()
   }
   
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
     
+    manager = OneShotLocationManager()
+    manager!.fetchWithCompletion { (location, error) -> () in
+      
+      if let loc = location {
+        
+        
+        var latitudeText:String = "\(location!.coordinate.latitude)"
+        
+        var longitudeText:String = "\(location!.coordinate.longitude)"
+        
+        
+        self.reallocation = ["lat":latitudeText,"long":longitudeText]
+        
+        
+        print(self.reallocation)
+
+      } else if let err = error {
+        NSLog(err.localizedDescription)
+      }
+      self.manager = nil
+    }
+  }
 
     /*
     // MARK: - Navigation
@@ -51,5 +66,22 @@ class RequestViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+  
+  func sendRequest(){
+    PFCloud.callFunctionInBackground("request", withParameters: ["location" : self.reallocation!], block: { (object: AnyObject?, error) -> Void in
+      if error == nil {
+        
+        let alert = UIAlertView()
+        alert.title = "Request Sent!"
+        alert.message = "Your bud is on the way!"
+        alert.addButtonWithTitle("Thanks!")
+        alert.show()
+        
+      } else {
+        NSLog("sent")
+        // Do error handling
+      }
+    })
+  }
 
 }
