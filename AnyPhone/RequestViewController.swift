@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import MapKit
 
 class RequestViewController: UIViewController, CLLocationManagerDelegate {
   
@@ -15,6 +16,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate {
   var reallocation : [NSString:NSString]?
   
   
+  @IBOutlet weak var map: MKMapView!
   
   @IBOutlet weak var requestButton: UIButton!
 
@@ -49,6 +51,8 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate {
         
         
         print(self.reallocation)
+        
+        self.centerMapOnLocation(loc)
 
       } else if let err = error {
         NSLog(err.localizedDescription)
@@ -86,4 +90,13 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate {
     })
   }
 
+  let regionRadius: CLLocationDistance = 1000
+  func centerMapOnLocation(location: CLLocation) {
+    let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+      regionRadius * 2.0, regionRadius * 2.0)
+    map.setRegion(coordinateRegion, animated: true)
+    map.scrollEnabled = false;
+    map.userInteractionEnabled = false;
+    map.zoomEnabled = false;
+  }
 }
