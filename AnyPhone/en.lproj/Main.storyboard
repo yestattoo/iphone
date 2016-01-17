@@ -464,11 +464,26 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvb-7Q-JwY">
                                 <rect key="frame" x="26" y="307" width="322" height="53"/>
                                 <color key="backgroundColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="H3U-ep-gIG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="Request Bud Now">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="H3U-ep-gIG"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="105" y="382" width="195" height="35"/>
+                                    <mask key="constraints">
+                                        <include reference="H3U-ep-gIG"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="30" y="332.5" width="606" height="35"/>
                                 </variation>
