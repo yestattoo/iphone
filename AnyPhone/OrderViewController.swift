@@ -9,10 +9,12 @@
 import UIKit
 import Parse
 import MapKit
+import MessageUI
 
-class OrderViewController: UIViewController {
+class OrderViewController: UIViewController, MFMessageComposeViewControllerDelegate {
 
   @IBOutlet weak var cancelButton: UIButton!
+  @IBOutlet weak var messageButton: UIButton!
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,21 +23,33 @@ class OrderViewController: UIViewController {
       
       
       self.cancelButton.addTarget(self, action: "cancel", forControlEvents: UIControlEvents.TouchUpInside)
-
-      
-      
-      
-      let alert = UIAlertView()
-      alert.title = "Request Sent!"
-      alert.message = "Your bud is on the way!"
-      alert.addButtonWithTitle("Thanks!")
-      alert.show()
+      self.messageButton.addTarget(self, action: "message", forControlEvents: UIControlEvents.TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+  
+  
+  func message(){
+    if (MFMessageComposeViewController.canSendText()) {
+      let controller = MFMessageComposeViewController()
+      controller.body = "BudHero Message:  "
+      controller.recipients = ["4086551636"]
+      controller.messageComposeDelegate = self
+      self.presentViewController(controller, animated: true, completion: nil)
+    }
+  }
+  
+  func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+    //... handle sms screen actions
+    self.dismissViewControllerAnimated(true, completion: nil)
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    self.navigationController?.navigationBarHidden = false
+  }
   
   func cancel(){
     

@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import AddressBookUI
 import MapKit
 
 class RequestViewController: UIViewController, CLLocationManagerDelegate {
@@ -18,6 +19,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate {
   
   @IBOutlet weak var map: MKMapView!
   
+  @IBOutlet weak var addressField: UITextField!
   @IBOutlet weak var requestButton: UIButton!
 
     override func viewDidLoad() {
@@ -53,6 +55,34 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate {
         print(self.reallocation)
         
         self.centerMapOnLocation(loc)
+        
+        
+        
+        
+        
+        
+        //now add the text to the textfield
+        
+        let wordlocation = CLLocation(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude) //changed!!!
+        
+        CLGeocoder().reverseGeocodeLocation(wordlocation, completionHandler: {(placemarks, error) -> Void in
+          if error != nil {
+            return
+          }
+          
+          if placemarks!.count > 0 {
+            let pm = placemarks![0]
+            self.addressField.text = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
+          }
+          else {
+            NSLog("Problem with the data received from geocoder")
+          }
+        })
+        
+        
+        
+        
+        
 
       } else if let err = error {
         NSLog(err.localizedDescription)
