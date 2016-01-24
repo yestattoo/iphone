@@ -74,7 +74,8 @@ class MainViewController: UIViewController {
   
   func goToReq(){
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let vc = storyboard.instantiateViewControllerWithIdentifier("RequestViewController")
+    let vc : RequestViewController = storyboard.instantiateViewControllerWithIdentifier("RequestViewController") as! RequestViewController
+    
     self.presentViewController(vc, animated: true, completion: nil)
   }
 

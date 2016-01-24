@@ -8,21 +8,43 @@
 
 import UIKit
 import Parse
+import LayerKit
+import Atlas
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
+  var layerClient: LYRClient!
+  
+  let LayerAppIDString: NSURL! = NSURL(string: "layer:///apps/staging/9d78ffcc-c2dc-11e5-9063-80b60e0058d9")
+  let ParseAppIDString: String = "eIvJ40jzlYcsYzxcRamj3tMgb5IufW7FZw4JpwH9"
+  let ParseClientKeyString: String = "1DYlnZYhoev4mglYW2TizFMwzEZwrhxC8IEjxXxC"
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-    Parse.enableLocalDatastore()
-    Parse.setApplicationId("eIvJ40jzlYcsYzxcRamj3tMgb5IufW7FZw4JpwH9",
-      clientKey: "1DYlnZYhoev4mglYW2TizFMwzEZwrhxC8IEjxXxC")
-
+    setupParse()
+    setupLayer()
+    
     PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-
+    
     return true
+  }
+  
+  func setupParse() {
+    Parse.enableLocalDatastore()
+    Parse.setApplicationId(ParseAppIDString, clientKey: ParseClientKeyString)
+    
+    
+    // Set default ACLs
+    let defaultACL: PFACL = PFACL()
+    defaultACL.setPublicReadAccess(true)
+    PFACL.setDefaultACL(defaultACL, withAccessForCurrentUser: true)
+  }
+  
+  func setupLayer() {
+    layerClient = LYRClient(appID: LayerAppIDString)
+    layerClient.autodownloadMIMETypes = NSSet(objects: ATLMIMETypeImagePNG, ATLMIMETypeImageJPEG, ATLMIMETypeImageJPEGPreview, ATLMIMETypeImageGIF, ATLMIMETypeImageGIFPreview, ATLMIMETypeLocation) as? Set<String>
   }
   
 }

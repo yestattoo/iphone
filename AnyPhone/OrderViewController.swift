@@ -10,11 +10,18 @@ import UIKit
 import Parse
 import MapKit
 import MessageUI
+import Atlas
 
 class OrderViewController: UIViewController, MFMessageComposeViewControllerDelegate {
 
   @IBOutlet weak var cancelButton: UIButton!
   @IBOutlet weak var messageButton: UIButton!
+  
+  
+  
+  var layerClient: LYRClient!
+  var conversationListViewController: ConversationListViewController!
+
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +40,18 @@ class OrderViewController: UIViewController, MFMessageComposeViewControllerDeleg
   
   
   func message(){
-    if (MFMessageComposeViewController.canSendText()) {
-      let controller = MFMessageComposeViewController()
-      controller.body = "BudHero Message:  "
-      controller.recipients = ["4086551636"]
-      controller.messageComposeDelegate = self
-      self.presentViewController(controller, animated: true, completion: nil)
-    }
+//    if (MFMessageComposeViewController.canSendText()) {
+//      let controller = MFMessageComposeViewController()
+//      controller.body = "BudHero Message:  "
+//      controller.recipients = ["4086551636"]
+//      controller.messageComposeDelegate = self
+//      self.presentViewController(controller, animated: true, completion: nil)
+//    }
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    self.layerClient = appDelegate.layerClient
+    conversationListViewController = ConversationListViewController(layerClient: self.layerClient)
+    conversationListViewController.displaysAvatarItem = true
+    self.presentViewController(conversationListViewController, animated: true, completion: nil)
   }
   
   func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {

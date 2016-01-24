@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -461,13 +462,21 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fn2-d3-g4W">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="934 Howard Street San Francisco, CA" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ruD-B4-00d">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvb-7Q-JwY">
                                 <rect key="frame" x="26" y="307" width="322" height="53"/>
                                 <color key="backgroundColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="H3U-ep-gIG"/>
+                                    <constraint firstAttribute="width" constant="200" id="H3U-ep-gIG">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="360"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="120" id="Nfk-b4-pyw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="Request Budhero">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -476,11 +485,13 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="H3U-ep-gIG"/>
+                                        <exclude reference="Nfk-b4-pyw"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="H3U-ep-gIG"/>
+                                        <include reference="Nfk-b4-pyw"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
@@ -490,11 +501,6 @@
                                     <action selector="didTapSendCodeButton" destination="4K7-kW-uU5" eventType="touchUpInside" id="nv8-OG-prK"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="934 Howard Street San Francisco, CA" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ruD-B4-00d">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -503,6 +509,9 @@
                             <constraint firstItem="fn2-d3-g4W" firstAttribute="top" secondItem="7b6-oN-OPW" secondAttribute="top" id="NBM-pe-8eK"/>
                             <constraint firstItem="fn2-d3-g4W" firstAttribute="bottom" secondItem="Xr5-hV-F47" secondAttribute="top" id="cOf-zH-xW8"/>
                             <constraint firstItem="ruD-B4-00d" firstAttribute="centerX" secondItem="7b6-oN-OPW" secondAttribute="centerX" id="flg-aJ-9hT"/>
+                            <constraint firstItem="Xr5-hV-F47" firstAttribute="top" secondItem="xvb-7Q-JwY" secondAttribute="bottom" id="ihc-F1-wYL">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="xvb-7Q-JwY" firstAttribute="centerX" secondItem="fn2-d3-g4W" secondAttribute="centerX" id="q45-mL-6Db"/>
                             <constraint firstItem="fn2-d3-g4W" firstAttribute="leading" secondItem="7b6-oN-OPW" secondAttribute="leading" id="r6y-pW-yFb"/>
                             <constraint firstItem="ruD-B4-00d" firstAttribute="top" secondItem="7b6-oN-OPW" secondAttribute="topMargin" constant="50" id="xJO-Sf-jDi"/>
@@ -510,34 +519,36 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="fn2-d3-g4W"/>
-                                <exclude reference="xvb-7Q-JwY"/>
                                 <exclude reference="ruD-B4-00d"/>
+                                <exclude reference="xvb-7Q-JwY"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="ihc-F1-wYL"/>
+                                <exclude reference="flg-aJ-9hT"/>
+                                <exclude reference="xJO-Sf-jDi"/>
                                 <exclude reference="0wI-Hc-i6L"/>
                                 <exclude reference="5aZ-HX-h1U"/>
                                 <exclude reference="NBM-pe-8eK"/>
                                 <exclude reference="cOf-zH-xW8"/>
                                 <exclude reference="r6y-pW-yFb"/>
-                                <exclude reference="flg-aJ-9hT"/>
-                                <exclude reference="xJO-Sf-jDi"/>
                                 <exclude reference="q45-mL-6Db"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="fn2-d3-g4W"/>
-                                <include reference="xvb-7Q-JwY"/>
                                 <include reference="ruD-B4-00d"/>
+                                <include reference="xvb-7Q-JwY"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="ihc-F1-wYL"/>
+                                <include reference="flg-aJ-9hT"/>
+                                <include reference="xJO-Sf-jDi"/>
                                 <include reference="0wI-Hc-i6L"/>
-                                <include reference="5aZ-HX-h1U"/>
+                                <exclude reference="5aZ-HX-h1U"/>
                                 <include reference="NBM-pe-8eK"/>
                                 <include reference="cOf-zH-xW8"/>
                                 <include reference="r6y-pW-yFb"/>
-                                <include reference="flg-aJ-9hT"/>
-                                <include reference="xJO-Sf-jDi"/>
                                 <include reference="q45-mL-6Db"/>
                             </mask>
                         </variation>

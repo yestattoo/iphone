@@ -9,6 +9,7 @@
 import UIKit
 import Bolts
 import Parse
+import Atlas
 
 class LoginViewController: UIViewController {
 
@@ -19,6 +20,8 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var subtitleLabel: UILabel!
 
   var phoneNumber: String = ""
+  
+  var layerClient: LYRClient!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,6 +29,11 @@ class LoginViewController: UIViewController {
     sendCodeButton.layer.cornerRadius = 3
 
     self.editing = true
+    
+    if (PFUser.currentUser() != nil) {
+      self.loginLayer()
+      return
+    }
   }
 
   func step1() {
@@ -103,7 +111,9 @@ class LoginViewController: UIViewController {
             self.editing = true
             return self.step1()
           }
-          return self.dismissViewControllerAnimated(true, completion: nil)
+          //success
+          print("success")
+          return self.loginLayer()
         }
       } else {
         self.editing = true
@@ -128,6 +138,117 @@ class LoginViewController: UIViewController {
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
     return .Default
   }
+  
+  func loginLayer() {
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    self.layerClient = appDelegate.layerClient
+    
+    self.layerClient.connectWithCompletion { success, error in
+      if (!success) {
+        print("Failed to connect to Layer: \(error)")
+      } else {
+        let userID: String = PFUser.currentUser()!.objectId!
+        // Once connected, authenticate user.
+        // Check Authenticate step for authenticateLayerWithUserID source
+        self.authenticateLayerWithUserID(userID, completion: { success, error in
+          if (!success) {
+            print("Failed Authenticating Layer Client with error:\(error)")
+          } else {
+            print("Authenticated")
+            return self.dismissViewControllerAnimated(true, completion: nil)
+          }
+        })
+      }
+    }
+  }
+  
+  func authenticateLayerWithUserID(userID: NSString, completion: ((success: Bool , error: NSError!) -> Void)!) {
+    // Check to see if the layerClient is already authenticated.
+    if self.layerClient.authenticatedUserID != nil {
+      // If the layerClient is authenticated with the requested userID, complete the authentication process.
+      if self.layerClient.authenticatedUserID == userID {
+        print("Layer Authenticated as User \(self.layerClient.authenticatedUserID)")
+        if completion != nil {
+          completion(success: true, error: nil)
+        }
+        return
+      } else {
+        //If the authenticated userID is different, then deauthenticate the current client and re-authenticate with the new userID.
+        self.layerClient.deauthenticateWithCompletion { (success: Bool, error: NSError?) in
+          if error != nil {
+            self.authenticationTokenWithUserId(userID, completion: { (success: Bool, error: NSError?) in
+              if (completion != nil) {
+                completion(success: success, error: error)
+              }
+            })
+          } else {
+            if completion != nil {
+              completion(success: true, error: error)
+            }
+          }
+        }
+      }
+    } else {
+      // If the layerClient isn't already authenticated, then authenticate.
+      self.authenticationTokenWithUserId(userID, completion: { (success: Bool, error: NSError!) in
+        if completion != nil {
+          completion(success: success, error: error)
+        }
+      })
+    }
+  }
+  
+  func authenticationTokenWithUserId(userID: NSString, completion:((success: Bool, error: NSError!) -> Void)!) {
+    /*
+    * 1. Request an authentication Nonce from Layer
+    */
+    self.layerClient.requestAuthenticationNonceWithCompletion { (nonceString: String?, error: NSError?) in
+      guard let nonce = nonceString else {
+        if (completion != nil) {
+          completion(success: false, error: error)
+        }
+        return
+      }
+      
+      if (nonce.isEmpty) {
+        if (completion != nil) {
+          completion(success: false, error: error)
+        }
+        return
+      }
+      
+      /*
+      * 2. Acquire identity Token from Layer Identity Service
+      */
+      PFCloud.callFunctionInBackground("generateToken", withParameters: ["nonce": nonce, "userID": userID]) { (object:AnyObject?, error: NSError?) -> Void in
+        if error == nil {
+          let identityToken = object as! String
+          self.layerClient.authenticateWithIdentityToken(identityToken) { authenticatedUserID, error in
+            guard let userID = authenticatedUserID else {
+              if (completion != nil) {
+                completion(success: false, error: error)
+              }
+              return
+            }
+            
+            if (userID.isEmpty) {
+              if (completion != nil) {
+                completion(success: false, error: error)
+              }
+              return
+            }
+            
+            if (completion != nil) {
+              completion(success: true, error: nil)
+            }
+            print("Layer Authenticated as User: \(userID)")
+          }
+        } else {
+          print("Parse Cloud function failed to be called to generate token with error: \(error)")
+        }
+      }
+    }
+  }
 }
 
 extension LoginViewController : UITextFieldDelegate {
@@ -136,4 +257,5 @@ extension LoginViewController : UITextFieldDelegate {
     
     return true
   }
+  
 }

@@ -9,7 +9,7 @@
         <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="AnyPhone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="BudHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -37,7 +37,7 @@
         <!--Login View Controller-->
         <scene sceneID="h7o-sp-qnV">
             <objects>
-                <viewController id="4K7-kW-uU5" customClass="LoginViewController" customModule="AnyPhone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4K7-kW-uU5" customClass="LoginViewController" customModule="BudHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uzV-x9-Eam"/>
                         <viewControllerLayoutGuide type="bottom" id="dRX-hP-X14"/>
@@ -148,7 +148,7 @@
         <!--Main View Controller-->
         <scene sceneID="MMT-Zs-Ewn">
             <objects>
-                <viewController id="mL8-Zg-hMd" customClass="MainViewController" customModule="AnyPhone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mL8-Zg-hMd" customClass="MainViewController" customModule="BudHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mku-0x-JpD"/>
                         <viewControllerLayoutGuide type="bottom" id="jeO-Hb-GV1"/>
