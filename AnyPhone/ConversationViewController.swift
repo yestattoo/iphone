@@ -11,18 +11,46 @@ class ConversationViewController: ATLConversationViewController, ATLConversation
         self.dataSource = self
         self.delegate = self
         print("addressBarController: \(self.addressBarController)")
-        self.addressBarController?.delegate = self
-        
-        // Uncomment the following line if you want to show avatars in 1:1 conversations
-        // self.shouldDisplayAvatarItemForOneOtherParticipant = true
+        //self.addressBarController?.delegate = self
         
         // Setup the dateformatter used by the dataSource.
         self.dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
         self.dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
 
         self.configureUI()
+      
+      
+      self.sendMessage("Test")
     }
-
+  
+  private func sendMessage(messageText: String) {
+    
+    // If no conversations exist, create a new conversation object with a single participant
+    if conversation == nil {
+      var error: NSError?
+      do{
+        
+      conversation = try layerClient.newConversationWithParticipants(NSSet(array: ["Chris"]) as! Set<String>, options: nil)
+        
+        if conversation == nil {
+          print("New Conversation creation failed")
+        }
+        
+        // Creates a message part with text/plain MIME Type
+        let messagePart = LYRMessagePart(text: messageText)
+        
+        // Creates and returns a new message object with the given conversation and array of message parts
+        let pushMessage = "\(layerClient.authenticatedUserID), says, \(messageText)"
+          let message = try layerClient.newMessageWithParts([messagePart], options: nil)
+          // Sends the specified message
+          var error: NSError?
+          let success = try conversation.sendMessage(message)
+      }catch{
+        
+      }
+    }
+  }
+  
     // MARK - UI Configuration methods
 
     func configureUI() {
@@ -156,5 +184,4 @@ class ConversationViewController: ATLConversationViewController, ATLConversation
             }
         }
     }
-
 }

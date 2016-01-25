@@ -9,8 +9,6 @@ class ConversationListViewController: ATLConversationListViewController, ATLConv
 
         self.dataSource = self
         self.delegate = self
-        
-      
       
       
       // Create the navigation bar
@@ -24,7 +22,7 @@ class ConversationListViewController: ATLConversationListViewController, ATLConv
       let composeItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: Selector("composeButtonTapped:"))
       
       // Create two buttons for the navigation item
-      navigationItem.leftBarButtonItem = logoutItem
+      //navigationItem.leftBarButtonItem = logoutItem
       navigationItem.rightBarButtonItem = composeItem
       
       // Assign the navigation item to the navigation bar
@@ -37,6 +35,14 @@ class ConversationListViewController: ATLConversationListViewController, ATLConv
       
       print("here")
     }
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    print("jjust go to create message")
+    let controller = ConversationViewController(layerClient: self.layerClient)
+    controller.displaysAddressBar = true
+    self.presentViewController(controller, animated: true, completion: nil)
+  }
 
     // MARK - ATLConversationListViewControllerDelegate Methods
 
@@ -139,14 +145,7 @@ class ConversationListViewController: ATLConversationListViewController, ATLConv
         conversationViewController.displaysAddressBar = shouldShowAddressBar
         conversationViewController.conversation = conversation
     
-        if self.navigationController!.topViewController == self {
-            self.navigationController!.pushViewController(conversationViewController, animated: true)
-        } else {
-            var viewControllers = self.navigationController!.viewControllers
-            let listViewControllerIndex: Int = self.navigationController!.viewControllers.indexOf(self)!
-            viewControllers[listViewControllerIndex + 1 ..< viewControllers.count] = [conversationViewController]
-            self.navigationController!.setViewControllers(viewControllers, animated: true)
-        }
+        self.presentViewController(conversationViewController, animated: true, completion: nil)
     }
     
     
