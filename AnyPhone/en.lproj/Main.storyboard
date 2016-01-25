@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -462,11 +461,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fn2-d3-g4W">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </mapView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="934 Howard Street San Francisco, CA" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ruD-B4-00d">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvb-7Q-JwY">
                                 <rect key="frame" x="26" y="307" width="322" height="53"/>
                                 <color key="backgroundColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -501,60 +495,83 @@
                                     <action selector="didTapSendCodeButton" destination="4K7-kW-uU5" eventType="touchUpInside" id="nv8-OG-prK"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="124 Mission St." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yLr-pr-An3">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.60078125000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3bk-8S-BMh"/>
+                                    <constraint firstAttribute="width" constant="360" id="uN0-X0-VSQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <dataDetectorType key="dataDetectorTypes" address="YES"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3bk-8S-BMh"/>
+                                        <exclude reference="uN0-X0-VSQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="3bk-8S-BMh"/>
+                                        <include reference="uN0-X0-VSQ"/>
+                                    </mask>
+                                </variation>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="fn2-d3-g4W" secondAttribute="trailing" id="0wI-Hc-i6L"/>
                             <constraint firstItem="fn2-d3-g4W" firstAttribute="centerY" secondItem="xvb-7Q-JwY" secondAttribute="centerY" id="5aZ-HX-h1U"/>
                             <constraint firstItem="fn2-d3-g4W" firstAttribute="top" secondItem="7b6-oN-OPW" secondAttribute="top" id="NBM-pe-8eK"/>
+                            <constraint firstItem="xvb-7Q-JwY" firstAttribute="top" secondItem="yLr-pr-An3" secondAttribute="bottom" constant="8" id="OY6-Oi-i88"/>
                             <constraint firstItem="fn2-d3-g4W" firstAttribute="bottom" secondItem="Xr5-hV-F47" secondAttribute="top" id="cOf-zH-xW8"/>
-                            <constraint firstItem="ruD-B4-00d" firstAttribute="centerX" secondItem="7b6-oN-OPW" secondAttribute="centerX" id="flg-aJ-9hT"/>
+                            <constraint firstItem="yLr-pr-An3" firstAttribute="centerX" secondItem="7b6-oN-OPW" secondAttribute="centerX" id="clZ-Ho-rlV"/>
                             <constraint firstItem="Xr5-hV-F47" firstAttribute="top" secondItem="xvb-7Q-JwY" secondAttribute="bottom" id="ihc-F1-wYL">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
                             <constraint firstItem="xvb-7Q-JwY" firstAttribute="centerX" secondItem="fn2-d3-g4W" secondAttribute="centerX" id="q45-mL-6Db"/>
                             <constraint firstItem="fn2-d3-g4W" firstAttribute="leading" secondItem="7b6-oN-OPW" secondAttribute="leading" id="r6y-pW-yFb"/>
-                            <constraint firstItem="ruD-B4-00d" firstAttribute="top" secondItem="7b6-oN-OPW" secondAttribute="topMargin" constant="50" id="xJO-Sf-jDi"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="fn2-d3-g4W"/>
-                                <exclude reference="ruD-B4-00d"/>
                                 <exclude reference="xvb-7Q-JwY"/>
+                                <exclude reference="yLr-pr-An3"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ihc-F1-wYL"/>
-                                <exclude reference="flg-aJ-9hT"/>
-                                <exclude reference="xJO-Sf-jDi"/>
                                 <exclude reference="0wI-Hc-i6L"/>
                                 <exclude reference="5aZ-HX-h1U"/>
                                 <exclude reference="NBM-pe-8eK"/>
                                 <exclude reference="cOf-zH-xW8"/>
                                 <exclude reference="r6y-pW-yFb"/>
+                                <exclude reference="clZ-Ho-rlV"/>
+                                <exclude reference="OY6-Oi-i88"/>
                                 <exclude reference="q45-mL-6Db"/>
+                                <exclude reference="ihc-F1-wYL"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="fn2-d3-g4W"/>
-                                <include reference="ruD-B4-00d"/>
                                 <include reference="xvb-7Q-JwY"/>
+                                <include reference="yLr-pr-An3"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ihc-F1-wYL"/>
-                                <include reference="flg-aJ-9hT"/>
-                                <include reference="xJO-Sf-jDi"/>
                                 <include reference="0wI-Hc-i6L"/>
                                 <exclude reference="5aZ-HX-h1U"/>
                                 <include reference="NBM-pe-8eK"/>
                                 <include reference="cOf-zH-xW8"/>
                                 <include reference="r6y-pW-yFb"/>
+                                <include reference="clZ-Ho-rlV"/>
+                                <include reference="OY6-Oi-i88"/>
                                 <include reference="q45-mL-6Db"/>
+                                <include reference="ihc-F1-wYL"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="addressField" destination="ruD-B4-00d" id="Job-6s-POr"/>
+                        <outlet property="addressTextView" destination="yLr-pr-An3" id="bgd-b4-Gwg"/>
                         <outlet property="map" destination="fn2-d3-g4W" id="DAR-M9-Qlk"/>
                         <outlet property="requestButton" destination="xvb-7Q-JwY" id="YOQ-MR-ZsL"/>
                     </connections>

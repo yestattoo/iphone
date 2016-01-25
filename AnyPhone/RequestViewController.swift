@@ -12,7 +12,7 @@ import AddressBookUI
 import MapKit
 import Atlas
 
-class RequestViewController: UIViewController, CLLocationManagerDelegate {
+class RequestViewController: UIViewController, CLLocationManagerDelegate, UITextViewDelegate {
   
   var manager: OneShotLocationManager?
   var reallocation : [NSString:NSString]?
@@ -20,11 +20,16 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate {
   
   @IBOutlet weak var map: MKMapView!
   
-  @IBOutlet weak var addressField: UITextField!
   @IBOutlet weak var requestButton: UIButton!
 
+  @IBOutlet weak var addressTextView: UITextView!
+  
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+      addressTextView.delegate = self
+      requestButton.addTarget(self, action: "buttonAction:", forControlEvents: .TouchUpInside)
+
       
         self.loginLayer()
   }
@@ -143,7 +148,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate {
   
   func buttonAction(sender:UIButton!)
   {
-    
+    print("buton action")
     self.sendRequest()
   }
   
@@ -184,7 +189,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate {
           
           if placemarks!.count > 0 {
             let pm = placemarks![0]
-            self.addressField.text = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
+            self.addressTextView.text = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
           }
           else {
             NSLog("Problem with the data received from geocoder")
@@ -214,13 +219,26 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate {
     */
   
   func goToReq(){
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let vc : OrderViewController = storyboard.instantiateViewControllerWithIdentifier("OrderViewController") as! OrderViewController
-    vc.layerClient = self.layerClient;
-    self.presentViewController(vc, animated: true, completion: nil)
+    
+    let screenSize: CGRect = UIScreen.mainScreen().bounds
+    let screenWidth = screenSize.width
+    let screenHeight = screenSize.height
+    
+    
+    let imageName = "requestpage.png"
+    let image = UIImage(named: imageName)
+    let imageView = UIImageView(image: image!)
+    imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+    view.addSubview(imageView)
+    
+//    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//    let vc : OrderViewController = storyboard.instantiateViewControllerWithIdentifier("OrderViewController") as! OrderViewController
+//    vc.layerClient = self.layerClient;
+//    self.presentViewController(vc, animated: true, completion: nil)
   }
   
   func sendRequest(){
+    print("send request")
     PFCloud.callFunctionInBackground("request", withParameters: ["location" : self.reallocation!], block: { (object: AnyObject?, error) -> Void in
       if error == nil {
         
@@ -241,5 +259,14 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate {
     map.scrollEnabled = false;
     map.userInteractionEnabled = false;
     map.zoomEnabled = false;
+  }
+  
+  func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+      textView.resignFirstResponder()
+      return false
+  }
+  
+  override func prefersStatusBarHidden() -> Bool {
+    return true
   }
 }

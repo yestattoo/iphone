@@ -29,6 +29,15 @@ class MainViewController: UIViewController {
     saveSettingsButton.layer.cornerRadius = 3
     if let user = self.user {
       usernameLabel.text = user.username
+      
+      
+      let currentInstallation: PFInstallation = PFInstallation.currentInstallation()
+      //add name to install
+      let channelName = "to" + user.username!
+      currentInstallation.addUniqueObject(channelName, forKey: "channels")
+      currentInstallation.saveInBackground()
+      
+      
       if let name = user["name"] as? String {
         nameTextField.text = name
       }

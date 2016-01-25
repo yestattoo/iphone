@@ -31,6 +31,7 @@ class OrderViewController: UIViewController, MFMessageComposeViewControllerDeleg
       
       self.cancelButton.addTarget(self, action: "cancel", forControlEvents: UIControlEvents.TouchUpInside)
       self.messageButton.addTarget(self, action: "message", forControlEvents: UIControlEvents.TouchUpInside)
+      
     }
 
     override func didReceiveMemoryWarning() {

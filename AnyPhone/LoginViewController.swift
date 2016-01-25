@@ -140,7 +140,8 @@ class LoginViewController: UIViewController {
   }
   
   func loginLayer() {
-    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    self.layerClient = appDelegate.layerClient
     
     self.layerClient.connectWithCompletion { success, error in
       if (!success) {

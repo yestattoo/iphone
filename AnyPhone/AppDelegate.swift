@@ -28,13 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
     
+    application.registerForRemoteNotifications()
+    
     return true
   }
   
   func setupParse() {
     Parse.enableLocalDatastore()
     Parse.setApplicationId(ParseAppIDString, clientKey: ParseClientKeyString)
-    
     
     // Set default ACLs
     let defaultACL: PFACL = PFACL()
@@ -45,6 +46,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func setupLayer() {
     layerClient = LYRClient(appID: LayerAppIDString)
     layerClient.autodownloadMIMETypes = NSSet(objects: ATLMIMETypeImagePNG, ATLMIMETypeImageJPEG, ATLMIMETypeImageJPEGPreview, ATLMIMETypeImageGIF, ATLMIMETypeImageGIFPreview, ATLMIMETypeLocation) as? Set<String>
+  }
+  
+  func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    
+    var currentInstallation = PFInstallation.currentInstallation()
+    currentInstallation.setDeviceTokenFromData(deviceToken)
+    currentInstallation.saveInBackground()
+    
+    print("got device id! \(deviceToken)")
+    
   }
   
 }
