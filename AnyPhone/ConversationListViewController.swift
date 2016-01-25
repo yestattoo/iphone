@@ -36,13 +36,13 @@ class ConversationListViewController: ATLConversationListViewController, ATLConv
       print("here")
     }
   
-  override func viewDidAppear(animated: Bool) {
-    super.viewDidAppear(animated)
-    print("jjust go to create message")
-    let controller = ConversationViewController(layerClient: self.layerClient)
-    controller.displaysAddressBar = true
-    self.presentViewController(controller, animated: true, completion: nil)
-  }
+//  override func viewDidAppear(animated: Bool) {
+//    super.viewDidAppear(animated)
+//    print("jjust go to create message")
+//    let controller = ConversationViewController(layerClient: self.layerClient)
+//    controller.displaysAddressBar = true
+//    self.presentViewController(controller, animated: true, completion: nil)
+//  }
 
     // MARK - ATLConversationListViewControllerDelegate Methods
 

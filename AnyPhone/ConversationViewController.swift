@@ -11,7 +11,7 @@ class ConversationViewController: ATLConversationViewController, ATLConversation
         self.dataSource = self
         self.delegate = self
         print("addressBarController: \(self.addressBarController)")
-        //self.addressBarController?.delegate = self
+        self.addressBarController?.delegate = self
         
         // Setup the dateformatter used by the dataSource.
         self.dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
@@ -20,7 +20,8 @@ class ConversationViewController: ATLConversationViewController, ATLConversation
         self.configureUI()
       
       
-      self.sendMessage("Test")
+      //self.sendMessage("Test")
+      
     }
   
   private func sendMessage(messageText: String) {
@@ -40,11 +41,14 @@ class ConversationViewController: ATLConversationViewController, ATLConversation
         let messagePart = LYRMessagePart(text: messageText)
         
         // Creates and returns a new message object with the given conversation and array of message parts
-        let pushMessage = "\(layerClient.authenticatedUserID), says, \(messageText)"
-          let message = try layerClient.newMessageWithParts([messagePart], options: nil)
+
+        let message = try layerClient.newMessageWithParts([messagePart], options: nil)
           // Sends the specified message
           var error: NSError?
           let success = try conversation.sendMessage(message)
+        
+  
+        
       }catch{
         
       }
