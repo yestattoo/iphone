@@ -29,6 +29,8 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
         super.viewDidLoad()
       addressTextView.delegate = self
       map.delegate = self
+      map.showsUserLocation = true
+      
       addressTextView.textContainer.maximumNumberOfLines = 2
       requestButton.addTarget(self, action: "buttonAction:", forControlEvents: .TouchUpInside)
 
