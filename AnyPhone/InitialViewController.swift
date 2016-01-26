@@ -13,7 +13,13 @@ class InitialViewController: UIViewController {
 
   override func viewDidAppear(animated: Bool) {
     if let _ = PFUser.currentUser() {
-      self.performSegueWithIdentifier("toMain", sender: self)
+      
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      let vc : RequestViewController = storyboard.instantiateViewControllerWithIdentifier("RequestViewController") as! RequestViewController
+      
+      self.presentViewController(vc, animated: true, completion: nil)
+      
+      
     } else {
       self.performSegueWithIdentifier("toLogin", sender: self)
     }

@@ -19,8 +19,9 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   var layerClient: LYRClient!
   var imageView : UIImageView!
   
+  @IBOutlet weak var profileImageView: UIImageView!
   @IBOutlet weak var map: MKMapView!
-  
+  @IBOutlet weak var profileClick: UIButton!
   @IBOutlet weak var requestButton: UIButton!
 
   @IBOutlet weak var addressTextView: UITextView!
@@ -197,17 +198,22 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     imageView.userInteractionEnabled = true
     imageView.addGestureRecognizer(tapGestureRecognizer)
     
+    let tapGestureRecognizer2 = UITapGestureRecognizer(target:self, action:Selector("profileImageTapped:"))
+    profileImageView.userInteractionEnabled = true
+    tapGestureRecognizer2.numberOfTouchesRequired = 1
+    profileImageView.addGestureRecognizer(tapGestureRecognizer2)
+    
     
     
     imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
     view.addSubview(imageView)
-    
-//    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//    let vc : OrderViewController = storyboard.instantiateViewControllerWithIdentifier("OrderViewController") as! OrderViewController
-//    vc.layerClient = self.layerClient;
-//    self.presentViewController(vc, animated: true, completion: nil)
   }
   
+  
+  
+  func profileImageTapped(img: AnyObject){
+    
+  }
   
   func imageTapped(img: AnyObject)
   {
@@ -237,7 +243,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
       }
     })
   }
-
+  
   let regionRadius: CLLocationDistance = 1000
   func centerMapOnLocation(location: CLLocation) {
     let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
@@ -246,6 +252,15 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     map.scrollEnabled = true;
     map.userInteractionEnabled = true;
     map.zoomEnabled = true;
+  }
+  
+  @IBAction func profileButtonClick(sender: UIButton) {
+    
+    print("tapped")
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let vc : MainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
+    self.presentViewController(vc, animated: true, completion: nil)
+    
   }
   
   func textViewDidBeginEditing(textView: UITextView) {

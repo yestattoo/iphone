@@ -46,6 +46,12 @@ class MainViewController: UIViewController {
       dismissViewControllerAnimated(true, completion: nil)
     }
   }
+  @IBAction func backClick(sender: UIButton) {
+    self.dismissViewControllerAnimated(true) { () -> Void in
+      
+      
+    }
+  }
 
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
     return .LightContent
@@ -76,16 +82,15 @@ class MainViewController: UIViewController {
       
       self.goToReq()
       
+      
     } else {
       dismissViewControllerAnimated(true, completion: nil)
     }
   }
   
   func goToReq(){
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let vc : RequestViewController = storyboard.instantiateViewControllerWithIdentifier("RequestViewController") as! RequestViewController
-    
-    self.presentViewController(vc, animated: true, completion: nil)
+    dismissViewControllerAnimated(true, completion: nil)
+
   }
 
   func checkSetting(user: PFUser, settingName : String) -> Bool {
