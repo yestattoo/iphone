@@ -7,19 +7,71 @@
 //
 
 import UIKit
+import MapKit
+
+
+protocol UpdateAddyViewControllerDelegate {
+  func doSomethingWithData(data: CLLocation)
+}
+
 
 class UpdateAddyViewController: UIViewController , UITextViewDelegate{
 
   @IBOutlet weak var addressTextView: UITextView!
+  var delegate: UpdateAddyViewControllerDelegate?
+  
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      addressTextView.delegate = self
+      self.addressTextView.delegate = self
         // Do any additional setup after loading the view.
       
       
-      addressTextView.becomeFirstResponder()
     }
+  
+  override func viewDidAppear(animated: Bool) {
+
+    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC)))
+    dispatch_after(delayTime, dispatch_get_main_queue()) {
+      print("test")
+      self.addressTextView.text = ""
+      self.addressTextView.becomeFirstResponder()
+
+    }
+  }
+  
+  func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    if(text == "\n") {
+      textView.resignFirstResponder()
+      
+      
+      
+      
+      let request = MKLocalSearchRequest()
+      request.naturalLanguageQuery = addressTextView.text
+      
+      let search = MKLocalSearch(request: request)
+      search.startWithCompletionHandler { response, error in
+        guard let response = response else {
+          print("There was an error searching for: \(request.naturalLanguageQuery) error: \(error)")
+          return
+        }
+        
+      
+        var location = response.mapItems.first!.placemark.location
+        
+        print(location)
+        
+        
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+          self.delegate?.doSomethingWithData(location!)
+        })
+      }
+    }
+    return true
+  }
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

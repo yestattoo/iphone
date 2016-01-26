@@ -12,7 +12,7 @@ import AddressBookUI
 import MapKit
 import Atlas
 
-class RequestViewController: UIViewController, CLLocationManagerDelegate, UITextViewDelegate, MKMapViewDelegate {
+class RequestViewController: UIViewController, CLLocationManagerDelegate, UITextViewDelegate, MKMapViewDelegate, UpdateAddyViewControllerDelegate {
   
   var manager: OneShotLocationManager?
   var reallocation : [NSString:NSString]?
@@ -40,52 +40,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
       
       manager = OneShotLocationManager()
       manager!.fetchWithCompletion { (location, error) -> () in
-        
-        if let loc = location {
-          
-          var latitudeText:String = "\(location!.coordinate.latitude)"
-          
-          var longitudeText:String = "\(location!.coordinate.longitude)"
-          
-          
-          self.reallocation = ["lat":latitudeText,"long":longitudeText]
-          
-          
-          print(self.reallocation)
-          
-          self.centerMapOnLocation(loc)
-          
-          
-          
-          
-          
-          
-          //now add the text to the textfield
-          
-          let wordlocation = CLLocation(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude) //changed!!!
-          
-          CLGeocoder().reverseGeocodeLocation(wordlocation, completionHandler: {(placemarks, error) -> Void in
-            if error != nil {
-              return
-            }
-            
-            if placemarks!.count > 0 {
-              let pm = placemarks![0]
-              self.addressTextView.text = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
-            }
-            else {
-              NSLog("Problem with the data received from geocoder")
-            }
-          })
-          
-          
-          
-          
-          
-          
-        } else if let err = error {
-          NSLog(err.localizedDescription)
-        }
+        self.renderLocation(location!)
         self.manager = nil
       }
   }
@@ -301,10 +256,43 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     return true
   }
   
+  func renderLocation(location: CLLocation) {
+      var latitudeText:String = "\(location.coordinate.latitude)"
+      
+      var longitudeText:String = "\(location.coordinate.longitude)"
+      
+      
+      self.reallocation = ["lat":latitudeText,"long":longitudeText]
+      
+      
+      print(self.reallocation)
+      
+      self.centerMapOnLocation(location)
+      
+      
+      let wordlocation = CLLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude) //changed!!!
+      
+      CLGeocoder().reverseGeocodeLocation(wordlocation, completionHandler: {(placemarks, error) -> Void in
+        if error != nil {
+          return
+        }
+        
+        if placemarks!.count > 0 {
+          let pm = placemarks![0]
+          self.addressTextView.text = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
+        }
+        else {
+          NSLog("Problem with the data received from geocoder")
+        }
+      })
+  }
+  
   func textViewShouldBeginEditing(textView: UITextView) -> Bool {
     textView.resignFirstResponder()
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let vc : UpdateAddyViewController = storyboard.instantiateViewControllerWithIdentifier("UpdateAddyViewController") as! UpdateAddyViewController
+    vc.delegate = self
+    
     self.presentViewController(vc, animated: true, completion: nil)
     
     print("h2")
@@ -314,5 +302,11 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     
     print("h1")
 
+  }
+  
+  func doSomethingWithData(data: CLLocation) {
+    print("here!!!")
+    // Uses the data passed back
+    self.renderLocation(data)
   }
 }
