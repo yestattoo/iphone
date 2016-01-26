@@ -605,6 +605,7 @@
         <!--Update Addy View Controller-->
         <scene sceneID="PHR-EI-NQg">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vb2-d1-S1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="UpdateAddyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jQc-NZ-OAp" customClass="UpdateAddyViewController" customModule="BudHero" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nqd-0F-7Am"/>
@@ -613,80 +614,90 @@
                     <view key="view" contentMode="scaleToFill" id="Sef-aB-6wv">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weX-Xe-sCB">
-                                <rect key="frame" x="0.0" y="8" width="86" height="70"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1A-VC-j5z">
-                                        <rect key="frame" x="20" y="20" width="46" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Qob-Y7-vXn"/>
-                                            <constraint firstAttribute="width" constant="46" id="tct-Co-tyJ"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="Qob-Y7-vXn"/>
-                                                <exclude reference="tct-Co-tyJ"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                            <mask key="constraints">
-                                                <include reference="Qob-Y7-vXn"/>
-                                                <include reference="tct-Co-tyJ"/>
-                                            </mask>
-                                        </variation>
-                                    </button>
-                                </subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter New Address" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3sc-Jp-1NQ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="q1A-VC-j5z" firstAttribute="leading" secondItem="weX-Xe-sCB" secondAttribute="leadingMargin" id="Iek-UR-Luj"/>
-                                    <constraint firstItem="q1A-VC-j5z" firstAttribute="top" secondItem="weX-Xe-sCB" secondAttribute="topMargin" id="Zik-Gc-Wqu"/>
+                                    <constraint firstAttribute="height" constant="40" id="kl3-hI-347"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Iek-UR-Luj"/>
-                                        <exclude reference="Zik-Gc-Wqu"/>
+                                        <exclude reference="kl3-hI-347"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" axis="vertical" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="28" width="46" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="Iek-UR-Luj"/>
-                                        <include reference="Zik-Gc-Wqu"/>
+                                        <include reference="kl3-hI-347"/>
                                     </mask>
                                 </variation>
-                            </stackView>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1A-VC-j5z">
+                                <rect key="frame" x="20" y="20" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Qob-Y7-vXn"/>
+                                    <constraint firstAttribute="width" constant="46" id="tct-Co-tyJ"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Qob-Y7-vXn"/>
+                                        <exclude reference="tct-Co-tyJ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="26" y="28" width="34" height="30"/>
+                                    <mask key="constraints">
+                                        <include reference="Qob-Y7-vXn"/>
+                                        <include reference="tct-Co-tyJ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="backPress:" destination="jQc-NZ-OAp" eventType="touchUpInside" id="Fk8-nQ-Raw"/>
+                                </connections>
+                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter New Address" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fUl-cE-u0P">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="336" width="360" height="40"/>
-                                </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fUl-cE-u0P" firstAttribute="centerY" secondItem="Sef-aB-6wv" secondAttribute="centerY" id="q11-O7-HRu"/>
-                            <constraint firstItem="fUl-cE-u0P" firstAttribute="centerX" secondItem="Sef-aB-6wv" secondAttribute="centerX" id="wPC-E4-Vbd"/>
+                            <constraint firstItem="VcI-0V-ZDf" firstAttribute="top" secondItem="3sc-Jp-1NQ" secondAttribute="bottom" constant="590" id="Cqk-fG-YFd"/>
+                            <constraint firstItem="3sc-Jp-1NQ" firstAttribute="centerX" secondItem="Sef-aB-6wv" secondAttribute="centerX" id="IsV-Ai-ZtT"/>
+                            <constraint firstItem="q1A-VC-j5z" firstAttribute="leading" secondItem="Sef-aB-6wv" secondAttribute="leadingMargin" id="PIe-Bp-TC8"/>
+                            <constraint firstItem="3sc-Jp-1NQ" firstAttribute="leading" secondItem="Sef-aB-6wv" secondAttribute="leadingMargin" constant="15" id="gPt-Kw-BED"/>
+                            <constraint firstItem="q1A-VC-j5z" firstAttribute="top" secondItem="nqd-0F-7Am" secondAttribute="bottom" constant="8" symbolic="YES" id="vLF-8d-zDX"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="3sc-Jp-1NQ"/>
+                                <exclude reference="q1A-VC-j5z"/>
                                 <exclude reference="fUl-cE-u0P"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="q11-O7-HRu"/>
-                                <exclude reference="wPC-E4-Vbd"/>
+                                <exclude reference="PIe-Bp-TC8"/>
+                                <exclude reference="vLF-8d-zDX"/>
+                                <exclude reference="IsV-Ai-ZtT"/>
+                                <exclude reference="gPt-Kw-BED"/>
+                                <exclude reference="Cqk-fG-YFd"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="fUl-cE-u0P"/>
+                                <include reference="3sc-Jp-1NQ"/>
+                                <include reference="q1A-VC-j5z"/>
+                                <exclude reference="fUl-cE-u0P"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="q11-O7-HRu"/>
-                                <include reference="wPC-E4-Vbd"/>
+                                <include reference="PIe-Bp-TC8"/>
+                                <include reference="vLF-8d-zDX"/>
+                                <include reference="IsV-Ai-ZtT"/>
+                                <include reference="gPt-Kw-BED"/>
+                                <include reference="Cqk-fG-YFd"/>
                             </mask>
                         </variation>
                     </view>
@@ -694,7 +705,6 @@
                         <outlet property="addressTextView" destination="fUl-cE-u0P" id="wPj-zY-9IM"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vb2-d1-S1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1566" y="1146"/>
         </scene>

@@ -16,6 +16,9 @@ class UpdateAddyViewController: UIViewController , UITextViewDelegate{
 
       addressTextView.delegate = self
         // Do any additional setup after loading the view.
+      
+      
+      addressTextView.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +36,15 @@ class UpdateAddyViewController: UIViewController , UITextViewDelegate{
     }
     return true
   }
+  @IBAction func backPress(sender: UIButton) {
+    self.dismissViewControllerAnimated(true) { () -> Void in
+      
+      
+    }
+  }
+  
+  
+  
     /*
     // MARK: - Navigation
 
