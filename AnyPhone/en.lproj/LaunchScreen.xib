@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
@@ -19,16 +18,47 @@
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="budherologo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0dd-o0-yaa">
                     <rect key="frame" x="120" y="176" width="240" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="W8a-un-Ain"/>
+                        <constraint firstAttribute="width" constant="200" id="sgk-Ok-sTs"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="W8a-un-Ain"/>
+                            <exclude reference="sgk-Ok-sTs"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                        <rect key="frame" x="140" y="120" width="200" height="85"/>
+                        <mask key="constraints">
+                            <include reference="W8a-un-Ain"/>
+                            <include reference="sgk-Ok-sTs"/>
+                        </mask>
+                    </variation>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
+                <constraint firstItem="0dd-o0-yaa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PBf-z6-b8p"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstItem="0dd-o0-yaa" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Zyd-LI-S4r"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="PBf-z6-b8p"/>
+                    <exclude reference="Zyd-LI-S4r"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="constraints">
+                    <include reference="PBf-z6-b8p"/>
+                    <include reference="Zyd-LI-S4r"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
