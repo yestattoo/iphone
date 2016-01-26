@@ -160,7 +160,6 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
       
       if let loc = location {
         
-        
         var latitudeText:String = "\(location!.coordinate.latitude)"
         
         var longitudeText:String = "\(location!.coordinate.longitude)"
@@ -224,7 +223,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     let screenWidth = screenSize.width
     let screenHeight = screenSize.height
     
-    
+    requestButton.enabled = false
     let imageName = "requestpage.png"
     let image = UIImage(named: imageName)
     let imageView = UIImageView(image: image!)
@@ -261,10 +260,18 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     map.zoomEnabled = false;
   }
   
-  func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-      textView.resignFirstResponder()
-      return false
+  func textViewDidBeginEditing(textView: UITextView) {
+    var locationPicker = LocationPickerViewController()
+    locationPicker.completion = { location in
+      // do some awesome stuff with location
+      print(location)
+    }
+    
+    self.presentViewController(locationPicker, animated: true) { () -> Void in
+      print("presented")
+    }
   }
+
   
   override func prefersStatusBarHidden() -> Bool {
     return true

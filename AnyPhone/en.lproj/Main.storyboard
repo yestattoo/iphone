@@ -520,15 +520,9 @@
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.png" translatesAutoresizingMaskIntoConstraints="NO" id="stC-2N-z04">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="178" y="377" width="45" height="45"/>
-                                </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="9ne-Z6-snb">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="335" y="559" width="45" height="45"/>
-                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -558,6 +552,8 @@
                                 <exclude reference="9ne-Z6-snb"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="ihc-F1-wYL"/>
+                                <exclude reference="vc1-6j-xrR"/>
                                 <exclude reference="0wI-Hc-i6L"/>
                                 <exclude reference="5aZ-HX-h1U"/>
                                 <exclude reference="NBM-pe-8eK"/>
@@ -567,10 +563,8 @@
                                 <exclude reference="ZYF-ha-PGg"/>
                                 <exclude reference="8qX-Il-hf4"/>
                                 <exclude reference="clZ-Ho-rlV"/>
-                                <exclude reference="vc1-6j-xrR"/>
                                 <exclude reference="OY6-Oi-i88"/>
                                 <exclude reference="q45-mL-6Db"/>
-                                <exclude reference="ihc-F1-wYL"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -582,6 +576,8 @@
                                 <include reference="9ne-Z6-snb"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="ihc-F1-wYL"/>
+                                <include reference="vc1-6j-xrR"/>
                                 <include reference="0wI-Hc-i6L"/>
                                 <exclude reference="5aZ-HX-h1U"/>
                                 <include reference="NBM-pe-8eK"/>
@@ -591,10 +587,8 @@
                                 <include reference="ZYF-ha-PGg"/>
                                 <include reference="8qX-Il-hf4"/>
                                 <include reference="clZ-Ho-rlV"/>
-                                <include reference="vc1-6j-xrR"/>
                                 <include reference="OY6-Oi-i88"/>
                                 <include reference="q45-mL-6Db"/>
-                                <include reference="ihc-F1-wYL"/>
                             </mask>
                         </variation>
                     </view>
