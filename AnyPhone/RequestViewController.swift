@@ -17,6 +17,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   var manager: OneShotLocationManager?
   var reallocation : [NSString:NSString]?
   var layerClient: LYRClient!
+  var imageView : UIImageView!
   
   @IBOutlet weak var map: MKMapView!
   
@@ -186,7 +187,18 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     requestButton.enabled = false
     let imageName = "requestpage.png"
     let image = UIImage(named: imageName)
-    let imageView = UIImageView(image: image!)
+    imageView = UIImageView(image: image!)
+    
+    
+    
+    
+    
+    let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+    imageView.userInteractionEnabled = true
+    imageView.addGestureRecognizer(tapGestureRecognizer)
+    
+    
+    
     imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
     view.addSubview(imageView)
     
@@ -194,6 +206,22 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
 //    let vc : OrderViewController = storyboard.instantiateViewControllerWithIdentifier("OrderViewController") as! OrderViewController
 //    vc.layerClient = self.layerClient;
 //    self.presentViewController(vc, animated: true, completion: nil)
+  }
+  
+  
+  func imageTapped(img: AnyObject)
+  {
+    PFCloud.callFunctionInBackground("cancel", withParameters: nil, block: { (object: AnyObject?, error) -> Void in
+      if error == nil {
+        self.imageView.removeFromSuperview()
+        
+      } else {
+        // Do error handling
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+          NSLog("canceled with error")
+        })
+      }
+    })
   }
   
   func sendRequest(){

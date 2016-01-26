@@ -16,7 +16,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="budherologo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0dd-o0-yaa">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="budherologo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0dd-o0-yaa">
                     <rect key="frame" x="120" y="176" width="240" height="128"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="85" id="W8a-un-Ain"/>
