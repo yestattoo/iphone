@@ -26,16 +26,6 @@ class UpdateAddyViewController: UIViewController , UITextViewDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-  func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-    if(text == "\n") {
-      textView.resignFirstResponder()
-      self.dismissViewControllerAnimated(true, completion: { () -> Void in
-        print("bam")
-      })
-      return false
-    }
-    return true
-  }
   @IBAction func backPress(sender: UIButton) {
     self.dismissViewControllerAnimated(true) { () -> Void in
       
