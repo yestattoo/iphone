@@ -28,10 +28,63 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     override func viewDidLoad() {
         super.viewDidLoad()
       addressTextView.delegate = self
+      addressTextView.textContainer.maximumNumberOfLines = 2
       requestButton.addTarget(self, action: "buttonAction:", forControlEvents: .TouchUpInside)
 
       
         self.loginLayer()
+      
+      
+      manager = OneShotLocationManager()
+      manager!.fetchWithCompletion { (location, error) -> () in
+        
+        if let loc = location {
+          
+          var latitudeText:String = "\(location!.coordinate.latitude)"
+          
+          var longitudeText:String = "\(location!.coordinate.longitude)"
+          
+          
+          self.reallocation = ["lat":latitudeText,"long":longitudeText]
+          
+          
+          print(self.reallocation)
+          
+          self.centerMapOnLocation(loc)
+          
+          
+          
+          
+          
+          
+          //now add the text to the textfield
+          
+          let wordlocation = CLLocation(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude) //changed!!!
+          
+          CLGeocoder().reverseGeocodeLocation(wordlocation, completionHandler: {(placemarks, error) -> Void in
+            if error != nil {
+              return
+            }
+            
+            if placemarks!.count > 0 {
+              let pm = placemarks![0]
+              self.addressTextView.text = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
+            }
+            else {
+              NSLog("Problem with the data received from geocoder")
+            }
+          })
+          
+          
+          
+          
+          
+          
+        } else if let err = error {
+          NSLog(err.localizedDescription)
+        }
+        self.manager = nil
+      }
   }
   
   func loginLayer() {
@@ -154,57 +207,6 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    
-    manager = OneShotLocationManager()
-    manager!.fetchWithCompletion { (location, error) -> () in
-      
-      if let loc = location {
-        
-        var latitudeText:String = "\(location!.coordinate.latitude)"
-        
-        var longitudeText:String = "\(location!.coordinate.longitude)"
-        
-        
-        self.reallocation = ["lat":latitudeText,"long":longitudeText]
-        
-        
-        print(self.reallocation)
-        
-        self.centerMapOnLocation(loc)
-        
-        
-        
-        
-        
-        
-        //now add the text to the textfield
-        
-        let wordlocation = CLLocation(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude) //changed!!!
-        
-        CLGeocoder().reverseGeocodeLocation(wordlocation, completionHandler: {(placemarks, error) -> Void in
-          if error != nil {
-            return
-          }
-          
-          if placemarks!.count > 0 {
-            let pm = placemarks![0]
-            self.addressTextView.text = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
-          }
-          else {
-            NSLog("Problem with the data received from geocoder")
-          }
-        })
-        
-        
-        
-        
-        
-
-      } else if let err = error {
-        NSLog(err.localizedDescription)
-      }
-      self.manager = nil
-    }
   }
 
     /*
