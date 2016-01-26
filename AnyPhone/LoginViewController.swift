@@ -30,10 +30,7 @@ class LoginViewController: UIViewController {
 
     self.editing = true
     
-    if (PFUser.currentUser() != nil) {
-      self.loginLayer()
-      return
-    }
+    
   }
 
   func step1() {
@@ -113,7 +110,13 @@ class LoginViewController: UIViewController {
           }
           //success
           print("success")
-          return self.loginLayer()
+          
+          let storyboard = UIStoryboard(name: "Main", bundle: nil)
+          let vc : RequestViewController = storyboard.instantiateViewControllerWithIdentifier("RequestViewController") as! RequestViewController
+          
+          return self.presentViewController(vc, animated: true, completion: nil)
+          
+          //return self.loginLayer()
         }
       } else {
         self.editing = true
@@ -140,6 +143,7 @@ class LoginViewController: UIViewController {
   }
   
   func loginLayer() {
+    print("login layer")
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     self.layerClient = appDelegate.layerClient
     
@@ -155,8 +159,12 @@ class LoginViewController: UIViewController {
             print("Failed Authenticating Layer Client with error:\(error)")
           } else {
             print("Authenticated")
-            return self.dismissViewControllerAnimated(true, completion: nil)
-          }
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc : RequestViewController = storyboard.instantiateViewControllerWithIdentifier("RequestViewController") as! RequestViewController
+            
+            return self.presentViewController(vc, animated: true, completion: nil)
+            }
         })
       }
     }

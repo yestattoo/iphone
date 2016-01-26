@@ -27,6 +27,7 @@ class MainViewController: UIViewController {
 
     nameTextField.delegate = self
     saveSettingsButton.layer.cornerRadius = 3
+    print(PFUser.currentUser())
     if let user = self.user {
       usernameLabel.text = user.username
       
@@ -43,6 +44,7 @@ class MainViewController: UIViewController {
       }
       checkSettingsForUser(user)
     } else {
+      print("hi")
       dismissViewControllerAnimated(true, completion: nil)
     }
   }
@@ -83,7 +85,9 @@ class MainViewController: UIViewController {
       self.goToReq()
       
       
+      
     } else {
+      print("hiiii")
       dismissViewControllerAnimated(true, completion: nil)
     }
   }
@@ -103,9 +107,7 @@ class MainViewController: UIViewController {
   func checkSettingsForUser(user: PFUser) {
     if checkSetting(user, settingName: "flower") {
       setting1.setOn(true, animated: false)
-      delay(0.4, closure: { () -> () in
-        self.goToReq()
-      })
+      
     }
     if checkSetting(user, settingName: "edible") {
       setting2.setOn(true, animated: false)

@@ -47,6 +47,8 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
       }
   }
   
+  
+  
   func loginLayer() {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     self.layerClient = appDelegate.layerClient
@@ -167,6 +169,19 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
+    
+    let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
+    if firstLaunch  {
+      print("Not first launch.")
+    }
+    else {
+      NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      let vc : MainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
+      
+      self.presentViewController(vc, animated: true, completion: nil)
+      print("First launch, setting NSUserDefault.")
+    }
   }
 
     /*
