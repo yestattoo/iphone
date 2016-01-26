@@ -12,7 +12,7 @@ import AddressBookUI
 import MapKit
 import Atlas
 
-class RequestViewController: UIViewController, CLLocationManagerDelegate, UITextViewDelegate {
+class RequestViewController: UIViewController, CLLocationManagerDelegate, UITextViewDelegate, MKMapViewDelegate {
   
   var manager: OneShotLocationManager?
   var reallocation : [NSString:NSString]?
@@ -28,6 +28,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     override func viewDidLoad() {
         super.viewDidLoad()
       addressTextView.delegate = self
+      map.delegate = self
       addressTextView.textContainer.maximumNumberOfLines = 2
       requestButton.addTarget(self, action: "buttonAction:", forControlEvents: .TouchUpInside)
 
@@ -257,9 +258,9 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
       regionRadius * 2.0, regionRadius * 2.0)
     map.setRegion(coordinateRegion, animated: true)
-    map.scrollEnabled = false;
-    map.userInteractionEnabled = false;
-    map.zoomEnabled = false;
+    map.scrollEnabled = true;
+    map.userInteractionEnabled = true;
+    map.zoomEnabled = true;
   }
   
   func textViewDidBeginEditing(textView: UITextView) {
@@ -317,6 +318,38 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     }
   }
 
+  func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
+    // Calling...
+    print("didc")
+
+    var latitudeText:String = "\(mapView.centerCoordinate.latitude)"
+    
+    var longitudeText:String = "\(mapView.centerCoordinate.longitude)"
+    
+    self.reallocation = ["lat":latitudeText,"long":longitudeText]
+  
+    let wordlocation = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude) //changed!!!
+    
+    CLGeocoder().reverseGeocodeLocation(wordlocation, completionHandler: {(placemarks, error) -> Void in
+      if error != nil {
+        return
+      }
+      
+      if placemarks!.count > 0 {
+        let pm = placemarks![0]
+        self.addressTextView.text = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
+      }
+      else {
+        NSLog("Problem with the data received from geocoder")
+      }
+    })
+  
+  }
+  
+  func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
+    // Not getting called
+    print("didup")
+  }
   
   override func prefersStatusBarHidden() -> Bool {
     return true
