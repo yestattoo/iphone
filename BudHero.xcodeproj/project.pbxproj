@@ -27,6 +27,7 @@
 		140DD2281AFB2A9C00B0A6BC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140DD2271AFB2A9C00B0A6BC /* MainViewController.swift */; };
 		14EF4EF21B03ED3900DB301A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14EF4EF11B03ED3900DB301A /* Images.xcassets */; };
 		2D0CD2A69C5ABC96D1DF971A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D2A5D074E4B3ADAB2527B2D /* Pods.framework */; };
+		FA0222D11C57125B0086C738 /* UpdateAddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0222D01C57125B0086C738 /* UpdateAddyViewController.swift */; };
 		FA06ED451C56DE10009737BC /* location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06ED431C56DE10009737BC /* location@2x.png */; };
 		FA06ED461C56DE10009737BC /* location@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06ED441C56DE10009737BC /* location@3x.png */; };
 		FA06ED491C56DEB3009737BC /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06ED471C56DEB3009737BC /* profile@2x.png */; };
@@ -75,6 +76,7 @@
 		14EF4EF11B03ED3900DB301A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8D2A5D074E4B3ADAB2527B2D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0523284BCE479D35A0920FE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FA0222D01C57125B0086C738 /* UpdateAddyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateAddyViewController.swift; sourceTree = "<group>"; };
 		FA06ED431C56DE10009737BC /* location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@2x.png"; sourceTree = "<group>"; };
 		FA06ED441C56DE10009737BC /* location@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@3x.png"; sourceTree = "<group>"; };
 		FA06ED471C56DEB3009737BC /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				FAD255011C56FA530034AB90 /* LocationPickerViewController.swift */,
 				FAD255021C56FA530034AB90 /* LocationSearchResultsViewController.swift */,
 				FAD255031C56FA530034AB90 /* SearchHistoryManager.swift */,
+				FA0222D01C57125B0086C738 /* UpdateAddyViewController.swift */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				FAC9B9B31C558AEF00F4D980 /* ConversationViewController.swift in Sources */,
 				140DD1EA1AFB132300B0A6BC /* InitialViewController.swift in Sources */,
 				FA58651B1C4B258B003BD5D7 /* OrderViewController.swift in Sources */,
+				FA0222D11C57125B0086C738 /* UpdateAddyViewController.swift in Sources */,
 				FAD880551C4B0D1100B45893 /* RequestViewController.swift in Sources */,
 				FAD255071C56FA530034AB90 /* SearchHistoryManager.swift in Sources */,
 				FAD255041C56FA530034AB90 /* Location.swift in Sources */,
@@ -510,7 +514,7 @@
 					"$(PROJECT_DIR)/AnyPhone",
 				);
 				INFOPLIST_FILE = AnyPhone/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.budhero.BudHero;
 				PRODUCT_NAME = BudHero;
@@ -530,7 +534,7 @@
 					"$(PROJECT_DIR)/AnyPhone",
 				);
 				INFOPLIST_FILE = AnyPhone/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.budhero.BudHero;
 				PRODUCT_NAME = BudHero;

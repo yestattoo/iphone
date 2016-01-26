@@ -266,63 +266,12 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   }
   
   func textViewDidBeginEditing(textView: UITextView) {
-    var locationPicker = LocationPickerViewController()
-    locationPicker.showCurrentLocationButton = true
-    locationPicker.useCurrentLocationAsHint = true
-    locationPicker.showCurrentLocationInitially = true
-    locationPicker.completion = { location in
-      // do some awesome stuff with location
-      print(location)
-      
-      var finallocation: Location? = location
-      var loc = finallocation?.location
-      
-      var latitudeText:String = "\(location!.coordinate.latitude)"
-      
-      var longitudeText:String = "\(location!.coordinate.longitude)"
-      
-      
-      self.reallocation = ["lat":latitudeText,"long":longitudeText]
-      
-      
-      print(self.reallocation)
-      
-      self.centerMapOnLocation(loc!)
-      
-      
-      
-      
-      
-      
-      //now add the text to the textfield
-      
-      let wordlocation = CLLocation(latitude: loc!.coordinate.latitude, longitude: loc!.coordinate.longitude) //changed!!!
-      
-      CLGeocoder().reverseGeocodeLocation(wordlocation, completionHandler: {(placemarks, error) -> Void in
-        if error != nil {
-          return
-        }
-        
-        if placemarks!.count > 0 {
-          let pm = placemarks![0]
-          self.addressTextView.text = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
-        }
-        else {
-          NSLog("Problem with the data received from geocoder")
-        }
-      })
-      
-      
-    }
     
-    self.presentViewController(locationPicker, animated: true) { () -> Void in
-      print("presented")
-    }
+    
   }
 
   func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
     // Calling...
-    print("didc")
 
     var latitudeText:String = "\(mapView.centerCoordinate.latitude)"
     
@@ -348,12 +297,22 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   
   }
   
-  func mapView(mapView: MKMapView!, didUpdateUserLocation userLocation: MKUserLocation!) {
-    // Not getting called
-    print("didup")
-  }
-  
   override func prefersStatusBarHidden() -> Bool {
     return true
+  }
+  
+  func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+    textView.resignFirstResponder()
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let vc : UpdateAddyViewController = storyboard.instantiateViewControllerWithIdentifier("UpdateAddyViewController") as! UpdateAddyViewController
+    self.presentViewController(vc, animated: true, completion: nil)
+    
+    print("h2")
+    return true
+  }
+  func textFieldDidBeginEditing(textField: UITextField) {
+    
+    print("h1")
+
   }
 }
