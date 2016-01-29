@@ -33,10 +33,11 @@
 		FA06ED491C56DEB3009737BC /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06ED471C56DEB3009737BC /* profile@2x.png */; };
 		FA06ED4A1C56DEB3009737BC /* profile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06ED481C56DEB3009737BC /* profile@3x.png */; };
 		FA58651B1C4B258B003BD5D7 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58651A1C4B258B003BD5D7 /* OrderViewController.swift */; };
-		FA60F9421C56BEE500222DE1 /* requestpage.png in Resources */ = {isa = PBXBuildFile; fileRef = FA60F9411C56BEE500222DE1 /* requestpage.png */; };
 		FA6232A11C4B3C2E004A2D02 /* blogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6232A01C4B3C2E004A2D02 /* blogo.png */; };
 		FA6232A31C4B3D44004A2D02 /* budherologo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6232A21C4B3D44004A2D02 /* budherologo.png */; };
 		FA79E7C91C4B1C1C00144FE4 /* OneShotLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79E7C81C4B1C1C00144FE4 /* OneShotLocationManager.swift */; };
+		FA89AA381C5C1464007535B0 /* requestpage.png in Resources */ = {isa = PBXBuildFile; fileRef = FA89AA361C5C1464007535B0 /* requestpage.png */; };
+		FA89AA391C5C1464007535B0 /* requestpageheader.png in Resources */ = {isa = PBXBuildFile; fileRef = FA89AA371C5C1464007535B0 /* requestpageheader.png */; };
 		FAC9B9B21C558AEF00F4D980 /* ConversationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B9AF1C558AEF00F4D980 /* ConversationListViewController.swift */; };
 		FAC9B9B31C558AEF00F4D980 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B9B01C558AEF00F4D980 /* ConversationViewController.swift */; };
 		FAC9B9B41C558AEF00F4D980 /* ParticipantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B9B11C558AEF00F4D980 /* ParticipantTableViewController.swift */; };
@@ -84,10 +85,11 @@
 		FA06ED481C56DEB3009737BC /* profile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@3x.png"; sourceTree = "<group>"; };
 		FA58651A1C4B258B003BD5D7 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		FA60F9401C56BBD300222DE1 /* BudHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA60F9411C56BEE500222DE1 /* requestpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = requestpage.png; sourceTree = "<group>"; };
 		FA6232A01C4B3C2E004A2D02 /* blogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blogo.png; sourceTree = "<group>"; };
 		FA6232A21C4B3D44004A2D02 /* budherologo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = budherologo.png; sourceTree = "<group>"; };
 		FA79E7C81C4B1C1C00144FE4 /* OneShotLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneShotLocationManager.swift; sourceTree = "<group>"; };
+		FA89AA361C5C1464007535B0 /* requestpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = requestpage.png; sourceTree = "<group>"; };
+		FA89AA371C5C1464007535B0 /* requestpageheader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = requestpageheader.png; sourceTree = "<group>"; };
 		FAC9B9AF1C558AEF00F4D980 /* ConversationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationListViewController.swift; sourceTree = "<group>"; };
 		FAC9B9B01C558AEF00F4D980 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		FAC9B9B11C558AEF00F4D980 /* ParticipantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantTableViewController.swift; sourceTree = "<group>"; };
@@ -157,10 +159,11 @@
 				FA6232A01C4B3C2E004A2D02 /* blogo.png */,
 				FA6232A21C4B3D44004A2D02 /* budherologo.png */,
 				FA06ED431C56DE10009737BC /* location@2x.png */,
+				FA89AA361C5C1464007535B0 /* requestpage.png */,
+				FA89AA371C5C1464007535B0 /* requestpageheader.png */,
 				FA06ED471C56DEB3009737BC /* profile@2x.png */,
 				FA06ED481C56DEB3009737BC /* profile@3x.png */,
 				FA06ED441C56DE10009737BC /* location@3x.png */,
-				FA60F9411C56BEE500222DE1 /* requestpage.png */,
 				FAF9CCFA1C5BF82500CADFCE /* GoogleService-Info.plist */,
 				140DD1E51AFB132300B0A6BC /* Supporting Files */,
 				0B3162F91B30128B0031D6F0 /* Localizable.strings */,
@@ -300,10 +303,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA89AA381C5C1464007535B0 /* requestpage.png in Resources */,
 				FA06ED4A1C56DEB3009737BC /* profile@3x.png in Resources */,
+				FA89AA391C5C1464007535B0 /* requestpageheader.png in Resources */,
 				0B814CC11B30025800DA5100 /* Main.storyboard in Resources */,
 				0B3162F71B30128B0031D6F0 /* Localizable.strings in Resources */,
-				FA60F9421C56BEE500222DE1 /* requestpage.png in Resources */,
 				FA06ED461C56DE10009737BC /* location@3x.png in Resources */,
 				FAF9CCFB1C5BF82500CADFCE /* GoogleService-Info.plist in Resources */,
 				FA06ED491C56DEB3009737BC /* profile@2x.png in Resources */,

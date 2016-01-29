@@ -165,6 +165,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   func buttonAction(sender:UIButton!)
   {
     print("buton action")
+    requestButton.enabled = false
     self.sendRequest()
     
     
@@ -214,32 +215,36 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   
   func goToReq(){
     
-    let screenSize: CGRect = UIScreen.mainScreen().bounds
-    let screenWidth = screenSize.width
-    let screenHeight = screenSize.height
+//    let screenSize: CGRect = UIScreen.mainScreen().bounds
+//    let screenWidth = screenSize.width
+//    let screenHeight = screenSize.height
+//    
+//    let imageName = "requestpage.png"
+//    let image = UIImage(named: imageName)
+//    imageView = UIImageView(image: image!)
+//    
+//    
+//    
+//    
+//    
+//    let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
+//    imageView.userInteractionEnabled = true
+//    imageView.addGestureRecognizer(tapGestureRecognizer)
+//    
+//    let tapGestureRecognizer2 = UITapGestureRecognizer(target:self, action:Selector("profileImageTapped:"))
+//    profileImageView.userInteractionEnabled = true
+//    tapGestureRecognizer2.numberOfTouchesRequired = 1
+//    profileImageView.addGestureRecognizer(tapGestureRecognizer2)
+//    
+//    
+//    
+//    imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+//    view.addSubview(imageView)
     
-    requestButton.enabled = false
-    let imageName = "requestpage.png"
-    let image = UIImage(named: imageName)
-    imageView = UIImageView(image: image!)
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let vc : OrderViewController = storyboard.instantiateViewControllerWithIdentifier("OrderViewController") as! OrderViewController
     
-    
-    
-    
-    
-    let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped:"))
-    imageView.userInteractionEnabled = true
-    imageView.addGestureRecognizer(tapGestureRecognizer)
-    
-    let tapGestureRecognizer2 = UITapGestureRecognizer(target:self, action:Selector("profileImageTapped:"))
-    profileImageView.userInteractionEnabled = true
-    tapGestureRecognizer2.numberOfTouchesRequired = 1
-    profileImageView.addGestureRecognizer(tapGestureRecognizer2)
-    
-    
-    
-    imageView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-    view.addSubview(imageView)
+    self.presentViewController(vc, animated: true, completion: nil)
   }
   
   
@@ -274,6 +279,8 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
         NSLog("sent")
         // Do error handling
       }
+      
+      self.requestButton.enabled = true
     })
   }
   

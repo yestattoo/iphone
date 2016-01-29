@@ -42,18 +42,18 @@ class OrderViewController: UIViewController, MFMessageComposeViewControllerDeleg
   
   
   func message(){
-//    if (MFMessageComposeViewController.canSendText()) {
-//      let controller = MFMessageComposeViewController()
-//      controller.body = "BudHero Message:  "
-//      controller.recipients = ["4086551636"]
-//      controller.messageComposeDelegate = self
-//      self.presentViewController(controller, animated: true, completion: nil)
-//    }
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    self.layerClient = appDelegate.layerClient
-    conversationListViewController = ConversationListViewController(layerClient: self.layerClient)
-    conversationListViewController.displaysAvatarItem = true
-    self.presentViewController(conversationListViewController, animated: true, completion: nil)
+    if (MFMessageComposeViewController.canSendText()) {
+      let controller = MFMessageComposeViewController()
+      controller.body = "BudHero Message:  "
+      controller.recipients = ["14154624372"]
+      controller.messageComposeDelegate = self
+      self.presentViewController(controller, animated: true, completion: nil)
+    }
+//    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//    self.layerClient = appDelegate.layerClient
+//    conversationListViewController = ConversationListViewController(layerClient: self.layerClient)
+//    conversationListViewController.displaysAvatarItem = true
+//    self.presentViewController(conversationListViewController, animated: true, completion: nil)
   }
   
   func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
