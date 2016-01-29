@@ -11,6 +11,7 @@ import Parse
 import MapKit
 import MessageUI
 import Atlas
+import Google
 
 class OrderViewController: UIViewController, MFMessageComposeViewControllerDelegate {
 
@@ -62,6 +63,15 @@ class OrderViewController: UIViewController, MFMessageComposeViewControllerDeleg
   
   override func viewWillDisappear(animated: Bool) {
     self.navigationController?.navigationBarHidden = false
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    var tracker = GAI.sharedInstance().defaultTracker
+    tracker.set(kGAIScreenName, value: "Order Sreen")
+    
+    var builder = GAIDictionaryBuilder.createScreenView()
+    tracker.send(builder.build() as [NSObject : AnyObject])
+    
   }
   
   func cancel(){

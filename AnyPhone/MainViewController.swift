@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import Google
 
 class MainViewController: UIViewController {
 
@@ -53,6 +54,15 @@ class MainViewController: UIViewController {
       
       
     }
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    var tracker = GAI.sharedInstance().defaultTracker
+    tracker.set(kGAIScreenName, value: "Settings Sreen")
+    
+    var builder = GAIDictionaryBuilder.createScreenView()
+    tracker.send(builder.build() as [NSObject : AnyObject])
+    
   }
 
   override func preferredStatusBarStyle() -> UIStatusBarStyle {

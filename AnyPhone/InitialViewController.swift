@@ -8,10 +8,19 @@
 
 import UIKit
 import Parse
+import Google
 
 class InitialViewController: UIViewController {
 
   override func viewDidAppear(animated: Bool) {
+    
+    var tracker = GAI.sharedInstance().defaultTracker
+    tracker.set(kGAIScreenName, value: "Initial Screen")
+    
+    var builder = GAIDictionaryBuilder.createScreenView()
+    tracker.send(builder.build() as [NSObject : AnyObject])
+    
+    
     if let _ = PFUser.currentUser() {
       
       let storyboard = UIStoryboard(name: "Main", bundle: nil)

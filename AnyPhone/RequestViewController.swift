@@ -11,6 +11,7 @@ import Parse
 import AddressBookUI
 import MapKit
 import Atlas
+import Google
 
 class RequestViewController: UIViewController, CLLocationManagerDelegate, UITextViewDelegate, MKMapViewDelegate, UpdateAddyViewControllerDelegate {
   
@@ -165,10 +166,27 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   {
     print("buton action")
     self.sendRequest()
+    
+    
+    var tracker = GAI.sharedInstance().defaultTracker
+    tracker.set(kGAIScreenName, value: "Request Button")
+    
+    var builder = GAIDictionaryBuilder.createScreenView()
+    tracker.send(builder.build() as [NSObject : AnyObject])
+
+    
   }
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
+    
+    var tracker = GAI.sharedInstance().defaultTracker
+    tracker.set(kGAIScreenName, value: "Request Screen")
+    
+    var builder = GAIDictionaryBuilder.createScreenView()
+    tracker.send(builder.build() as [NSObject : AnyObject])
+    
+    
     
     let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
     if firstLaunch  {

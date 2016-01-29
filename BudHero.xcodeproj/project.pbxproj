@@ -47,6 +47,7 @@
 		FAD255061C56FA530034AB90 /* LocationSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD255021C56FA530034AB90 /* LocationSearchResultsViewController.swift */; };
 		FAD255071C56FA530034AB90 /* SearchHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD255031C56FA530034AB90 /* SearchHistoryManager.swift */; };
 		FAD880551C4B0D1100B45893 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD880541C4B0D1100B45893 /* RequestViewController.swift */; };
+		FAF9CCFB1C5BF82500CADFCE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF9CCFA1C5BF82500CADFCE /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,7 @@
 		FAD255021C56FA530034AB90 /* LocationSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchResultsViewController.swift; sourceTree = "<group>"; };
 		FAD255031C56FA530034AB90 /* SearchHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryManager.swift; sourceTree = "<group>"; };
 		FAD880541C4B0D1100B45893 /* RequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
+		FAF9CCFA1C5BF82500CADFCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE83987CF325CD623E2EAA0B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 				FA06ED481C56DEB3009737BC /* profile@3x.png */,
 				FA06ED441C56DE10009737BC /* location@3x.png */,
 				FA60F9411C56BEE500222DE1 /* requestpage.png */,
+				FAF9CCFA1C5BF82500CADFCE /* GoogleService-Info.plist */,
 				140DD1E51AFB132300B0A6BC /* Supporting Files */,
 				0B3162F91B30128B0031D6F0 /* Localizable.strings */,
 			);
@@ -302,6 +305,7 @@
 				0B3162F71B30128B0031D6F0 /* Localizable.strings in Resources */,
 				FA60F9421C56BEE500222DE1 /* requestpage.png in Resources */,
 				FA06ED461C56DE10009737BC /* location@3x.png in Resources */,
+				FAF9CCFB1C5BF82500CADFCE /* GoogleService-Info.plist in Resources */,
 				FA06ED491C56DEB3009737BC /* profile@2x.png in Resources */,
 				FA6232A31C4B3D44004A2D02 /* budherologo.png in Resources */,
 				0B814CC21B30025800DA5100 /* LaunchScreen.xib in Resources */,
@@ -509,6 +513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AnyPhone",
@@ -529,6 +534,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AnyPhone",

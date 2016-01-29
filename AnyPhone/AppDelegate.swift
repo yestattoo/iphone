@@ -11,6 +11,7 @@ import UIKit
 import Parse
 import LayerKit
 import Atlas
+import Google
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,6 +31,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
     
     application.registerForRemoteNotifications()
+    
+    // Configure tracker from GoogleService-Info.plist.
+    var configureError:NSError?
+    GGLContext.sharedInstance().configureWithError(&configureError)
+    assert(configureError == nil, "Error configuring Google services: \(configureError)")
+    
+    // Optional: configure GAI options.
+    var gai = GAI.sharedInstance()
+    gai.trackUncaughtExceptions = true  // report uncaught exceptions
+    gai.logger.logLevel = GAILogLevel.Verbose  // remove before app release
     
     return true
   }

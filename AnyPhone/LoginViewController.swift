@@ -10,6 +10,7 @@ import UIKit
 import Bolts
 import Parse
 import Atlas
+import Google
 
 class LoginViewController: UIViewController {
 
@@ -39,6 +40,7 @@ class LoginViewController: UIViewController {
     questionLabel.text = NSLocalizedString("enterPhone", comment: "Please enter your phone number to log in.")
     subtitleLabel.text = NSLocalizedString("enterPhoneExtra", comment: "This example is limited to 10-digit US number.")
     sendCodeButton.enabled = true
+    
   }
 
   func step2() {
@@ -54,6 +56,12 @@ class LoginViewController: UIViewController {
     super.viewWillAppear(animated)
 
     textField.becomeFirstResponder()
+    
+    var tracker = GAI.sharedInstance().defaultTracker
+    tracker.set(kGAIScreenName, value: "Login Screen")
+    
+    var builder = GAIDictionaryBuilder.createScreenView()
+    tracker.send(builder.build() as [NSObject : AnyObject])
   }
 
   @IBAction func didTapSendCodeButton() {
@@ -82,6 +90,11 @@ class LoginViewController: UIViewController {
           self.showAlert("Login Error", message: description)
           return self.step1()
         }
+        var tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: "Send Request Code")
+        
+        var builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
         return self.step2()
       }
     } else {
