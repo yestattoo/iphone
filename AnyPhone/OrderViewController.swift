@@ -74,6 +74,14 @@ class OrderViewController: UIViewController, MFMessageComposeViewControllerDeleg
     
   }
   
+  override func shouldAutorotate() -> Bool {
+    return false
+  }
+  
+  override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+    return UIInterfaceOrientationMask.Portrait
+  }
+  
   func cancel(){
     
     PFCloud.callFunctionInBackground("cancel", withParameters: nil, block: { (object: AnyObject?, error) -> Void in

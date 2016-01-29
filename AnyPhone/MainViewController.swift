@@ -61,9 +61,15 @@ class MainViewController: UIViewController {
     tracker.set(kGAIScreenName, value: "Settings Sreen")
     
     var builder = GAIDictionaryBuilder.createScreenView()
+  
     tracker.send(builder.build() as [NSObject : AnyObject])
     
+    
+    delay(1000) { () -> () in
+      self.setting3.setOn(true, animated: true)
+    }
   }
+  
 
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
     return .LightContent
@@ -126,6 +132,9 @@ class MainViewController: UIViewController {
       setting3.setOn(true, animated: false)
     }
   }
+  override func shouldAutorotate() -> Bool {
+    return false
+  }
 }
 
 func delay(delay:Double, closure:()->()) {
@@ -136,6 +145,9 @@ func delay(delay:Double, closure:()->()) {
     ),
     dispatch_get_main_queue(), closure)
 }
+
+
+
 
 extension MainViewController : UITextFieldDelegate {
   func textFieldShouldReturn(textField: UITextField) -> Bool {

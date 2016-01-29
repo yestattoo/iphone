@@ -308,7 +308,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     
     var longitudeText:String = "\(mapView.centerCoordinate.longitude)"
     
-    self.reallocation = ["lat":latitudeText,"long":longitudeText]
+    self.reallocation = ["lat":latitudeText,"long":longitudeText ]
   
     let wordlocation = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude) //changed!!!
     
@@ -320,6 +320,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
       if placemarks!.count > 0 {
         let pm = placemarks![0]
         self.addressTextView.text = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
+        self.reallocation = ["lat":latitudeText,"long":longitudeText, "address":ABCreateStringWithAddressDictionary(pm.addressDictionary!, false) ]
       }
       else {
         NSLog("Problem with the data received from geocoder")
@@ -356,6 +357,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
         if placemarks!.count > 0 {
           let pm = placemarks![0]
           self.addressTextView.text = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
+          self.reallocation = ["lat":latitudeText,"long":longitudeText, "address":ABCreateStringWithAddressDictionary(pm.addressDictionary!, false) ]
         }
         else {
           NSLog("Problem with the data received from geocoder")
@@ -385,7 +387,13 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     // Uses the data passed back
     self.renderLocation(data)
   }
+  
+  override func shouldAutorotate() -> Bool {
+    return false
+  }
+  
 }
+
 
 extension UIButton {
   override public func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {

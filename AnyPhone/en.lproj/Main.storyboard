@@ -164,13 +164,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNa-DZ-xpy">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="pound" translatesAutoresizingMaskIntoConstraints="NO" id="UuN-4O-xPb">
-                                        <rect key="frame" x="176" y="28" width="22" height="26"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="26" id="Eyq-Hb-v5B"/>
-                                            <constraint firstAttribute="width" constant="22" id="uMJ-Aq-dVK"/>
-                                        </constraints>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUt-bx-HXN">
                                         <rect key="frame" x="258" y="27" width="105" height="30"/>
                                         <constraints>
@@ -201,10 +194,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.56470588235294117" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="UuN-4O-xPb" secondAttribute="centerX" id="1eU-uz-Xr6"/>
                                     <constraint firstAttribute="trailing" secondItem="MUt-bx-HXN" secondAttribute="trailing" constant="12" id="Rtx-of-4Ln"/>
                                     <constraint firstAttribute="height" constant="64" id="e6q-Xq-1Ag"/>
-                                    <constraint firstAttribute="bottom" secondItem="UuN-4O-xPb" secondAttribute="bottom" constant="10" id="ozv-Mi-N1u"/>
                                     <constraint firstAttribute="centerY" secondItem="MUt-bx-HXN" secondAttribute="centerY" constant="-10" id="rjj-QQ-8PZ"/>
                                 </constraints>
                                 <variation key="default">
@@ -324,7 +315,7 @@
                                                 <color key="textColor" red="0.33333333333333331" green="0.058823529411764705" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kwl-t7-7ye">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kwl-t7-7ye">
                                                 <rect key="frame" x="296" y="22" width="51" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31" id="BXb-rU-mEB"/>
@@ -350,7 +341,7 @@
                                                 <color key="textColor" red="0.33333333329999998" green="0.058823529409999999" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="doT-3R-qmj">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="doT-3R-qmj">
                                                 <rect key="frame" x="296" y="98" width="51" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="49" id="GVT-Ac-Zu7"/>
@@ -376,7 +367,7 @@
                                                 <color key="textColor" red="0.33333333329999998" green="0.058823529409999999" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="w9f-JE-xqV">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w9f-JE-xqV">
                                                 <rect key="frame" x="296" y="175" width="51" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31" id="Eft-Pk-Pua"/>
@@ -874,7 +865,6 @@
         <image name="budherologo.png" width="553" height="240"/>
         <image name="location.png" width="37" height="37"/>
         <image name="lock" width="14" height="18"/>
-        <image name="pound" width="22" height="26"/>
         <image name="profile.png" width="25" height="25"/>
     </resources>
 </document>

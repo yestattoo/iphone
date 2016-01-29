@@ -34,6 +34,10 @@ class LoginViewController: UIViewController {
     
   }
 
+  override func shouldAutorotate() -> Bool {
+    return false
+  }
+  
   func step1() {
     phoneNumber = ""
     textField.placeholder = NSLocalizedString("numberDefault", comment: "555-333-6726")
@@ -271,6 +275,7 @@ class LoginViewController: UIViewController {
     }
   }
 }
+
 
 extension LoginViewController : UITextFieldDelegate {
   func textFieldShouldReturn(textField: UITextField) -> Bool {
