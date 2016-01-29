@@ -386,3 +386,12 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     self.renderLocation(data)
   }
 }
+
+extension UIButton {
+  override public func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
+    var relativeFrame = self.bounds
+    var hitTestEdgeInsets = UIEdgeInsetsMake(-44, -44, -44, -44)
+    var hitFrame = UIEdgeInsetsInsetRect(relativeFrame, hitTestEdgeInsets)
+    return CGRectContainsPoint(hitFrame, point)
+  }
+}
