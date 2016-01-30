@@ -32,6 +32,7 @@
 		FA06ED461C56DE10009737BC /* location@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06ED441C56DE10009737BC /* location@3x.png */; };
 		FA06ED491C56DEB3009737BC /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06ED471C56DEB3009737BC /* profile@2x.png */; };
 		FA06ED4A1C56DEB3009737BC /* profile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06ED481C56DEB3009737BC /* profile@3x.png */; };
+		FA3712871C5C681700C7D31E /* OutOfBoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3712861C5C681700C7D31E /* OutOfBoundsViewController.swift */; };
 		FA58651B1C4B258B003BD5D7 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58651A1C4B258B003BD5D7 /* OrderViewController.swift */; };
 		FA6232A11C4B3C2E004A2D02 /* blogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6232A01C4B3C2E004A2D02 /* blogo.png */; };
 		FA6232A31C4B3D44004A2D02 /* budherologo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6232A21C4B3D44004A2D02 /* budherologo.png */; };
@@ -85,6 +86,7 @@
 		FA06ED441C56DE10009737BC /* location@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@3x.png"; sourceTree = "<group>"; };
 		FA06ED471C56DEB3009737BC /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
 		FA06ED481C56DEB3009737BC /* profile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@3x.png"; sourceTree = "<group>"; };
+		FA3712861C5C681700C7D31E /* OutOfBoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutOfBoundsViewController.swift; sourceTree = "<group>"; };
 		FA58651A1C4B258B003BD5D7 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		FA60F9401C56BBD300222DE1 /* BudHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6232A01C4B3C2E004A2D02 /* blogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blogo.png; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				FAD254FE1C56FA470034AB90 /* Location */,
 				FAC9B9AE1C558AE100F4D980 /* Messaging */,
 				FA79E7C81C4B1C1C00144FE4 /* OneShotLocationManager.swift */,
+				FA3712861C5C681700C7D31E /* OutOfBoundsViewController.swift */,
 				140DD1E71AFB132300B0A6BC /* AppDelegate.swift */,
 				140DD1E91AFB132300B0A6BC /* InitialViewController.swift */,
 				140DD2251AFB19F600B0A6BC /* LoginViewController.swift */,
@@ -387,6 +390,7 @@
 				FAD255051C56FA530034AB90 /* LocationPickerViewController.swift in Sources */,
 				FA79E7C91C4B1C1C00144FE4 /* OneShotLocationManager.swift in Sources */,
 				FAC9B9B31C558AEF00F4D980 /* ConversationViewController.swift in Sources */,
+				FA3712871C5C681700C7D31E /* OutOfBoundsViewController.swift in Sources */,
 				140DD1EA1AFB132300B0A6BC /* InitialViewController.swift in Sources */,
 				FA58651B1C4B258B003BD5D7 /* OrderViewController.swift in Sources */,
 				FA0222D11C57125B0086C738 /* UpdateAddyViewController.swift in Sources */,

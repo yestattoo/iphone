@@ -94,11 +94,13 @@ class LoginViewController: UIViewController {
           self.showAlert("Login Error", message: description)
           return self.step1()
         }
-        var tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: "Send Request Code")
-        
-        var builder = GAIDictionaryBuilder.createScreenView()
-        tracker.send(builder.build() as [NSObject : AnyObject])
+        let tracker = GAI.sharedInstance().defaultTracker
+        let eventTracker: NSObject = GAIDictionaryBuilder.createEventWithCategory(
+          "Send SignUp Code",
+          action: "SignUp Button",
+          label: "SomeLabel",
+          value: nil).build()
+        tracker.send(eventTracker as! [NSObject : AnyObject])
         return self.step2()
       }
     } else {
@@ -111,6 +113,15 @@ class LoginViewController: UIViewController {
   }
 
   func doLogin(phoneNumber: String, code: Int) {
+    let tracker = GAI.sharedInstance().defaultTracker
+    let eventTracker: NSObject = GAIDictionaryBuilder.createEventWithCategory(
+      "CodeEntry Attempt",
+      action: "Enter Code Button Button",
+      label: "SomeLabel",
+      value: nil).build()
+    tracker.send(eventTracker as! [NSObject : AnyObject])
+    
+    
     self.editing = false
     let params = ["phoneNumber": phoneNumber, "codeEntry": code] as [NSObject:AnyObject]
     PFCloud.callFunctionInBackground("logIn", withParameters: params) { response, error in

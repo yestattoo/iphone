@@ -169,13 +169,14 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     self.sendRequest()
     
     
-    var tracker = GAI.sharedInstance().defaultTracker
-    tracker.set(kGAIScreenName, value: "Request Button")
-    
-    var builder = GAIDictionaryBuilder.createScreenView()
-    tracker.send(builder.build() as [NSObject : AnyObject])
+    let tracker = GAI.sharedInstance().defaultTracker
+    let eventTracker: NSObject = GAIDictionaryBuilder.createEventWithCategory(
+      "Send Request",
+      action: "Request Button",
+      label: "SomeLabel",
+      value: nil).build()
+    tracker.send(eventTracker as! [NSObject : AnyObject])
 
-    
   }
   
   override func viewDidAppear(animated: Bool) {
@@ -269,6 +270,14 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   }
   
   func sendRequest(){
+    
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    self.requestButton.enabled = true
+    let vc : OutOfBoundsViewController = storyboard.instantiateViewControllerWithIdentifier("OutOfBoundsViewController") as! OutOfBoundsViewController
+    self.presentViewController(vc, animated: true, completion: nil)
+    
+    return
+      
     print("send request")
     PFCloud.callFunctionInBackground("request", withParameters: ["location" : self.reallocation!], block: { (object: AnyObject?, error) -> Void in
       if error == nil {
@@ -276,6 +285,9 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
         self.goToReq()
         
       } else {
+        if(error?.code==420){
+          print("out of area")
+        }
         NSLog("sent")
         // Do error handling
       }
