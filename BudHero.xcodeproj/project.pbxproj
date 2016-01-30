@@ -35,6 +35,9 @@
 		FA58651B1C4B258B003BD5D7 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58651A1C4B258B003BD5D7 /* OrderViewController.swift */; };
 		FA6232A11C4B3C2E004A2D02 /* blogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6232A01C4B3C2E004A2D02 /* blogo.png */; };
 		FA6232A31C4B3D44004A2D02 /* budherologo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6232A21C4B3D44004A2D02 /* budherologo.png */; };
+		FA6FB2401C5C4B0900845C04 /* YanoneKaffeesatz-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6FB23F1C5C4B0900845C04 /* YanoneKaffeesatz-Regular.ttf */; };
+		FA6FB2421C5C4B8800845C04 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6FB2411C5C4B8800845C04 /* Raleway-Regular.ttf */; };
+		FA6FB2441C5C4E8B00845C04 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6FB2431C5C4E8B00845C04 /* Raleway-Bold.ttf */; };
 		FA79E7C91C4B1C1C00144FE4 /* OneShotLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79E7C81C4B1C1C00144FE4 /* OneShotLocationManager.swift */; };
 		FA89AA381C5C1464007535B0 /* requestpage.png in Resources */ = {isa = PBXBuildFile; fileRef = FA89AA361C5C1464007535B0 /* requestpage.png */; };
 		FA89AA391C5C1464007535B0 /* requestpageheader.png in Resources */ = {isa = PBXBuildFile; fileRef = FA89AA371C5C1464007535B0 /* requestpageheader.png */; };
@@ -87,6 +90,9 @@
 		FA60F9401C56BBD300222DE1 /* BudHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6232A01C4B3C2E004A2D02 /* blogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blogo.png; sourceTree = "<group>"; };
 		FA6232A21C4B3D44004A2D02 /* budherologo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = budherologo.png; sourceTree = "<group>"; };
+		FA6FB23F1C5C4B0900845C04 /* YanoneKaffeesatz-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YanoneKaffeesatz-Regular.ttf"; sourceTree = "<group>"; };
+		FA6FB2411C5C4B8800845C04 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		FA6FB2431C5C4E8B00845C04 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		FA79E7C81C4B1C1C00144FE4 /* OneShotLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneShotLocationManager.swift; sourceTree = "<group>"; };
 		FA89AA361C5C1464007535B0 /* requestpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = requestpage.png; sourceTree = "<group>"; };
 		FA89AA371C5C1464007535B0 /* requestpageheader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = requestpageheader.png; sourceTree = "<group>"; };
@@ -164,6 +170,9 @@
 				FA06ED471C56DEB3009737BC /* profile@2x.png */,
 				FA06ED481C56DEB3009737BC /* profile@3x.png */,
 				FA06ED441C56DE10009737BC /* location@3x.png */,
+				FA6FB23F1C5C4B0900845C04 /* YanoneKaffeesatz-Regular.ttf */,
+				FA6FB2411C5C4B8800845C04 /* Raleway-Regular.ttf */,
+				FA6FB2431C5C4E8B00845C04 /* Raleway-Bold.ttf */,
 				FAF9CCFA1C5BF82500CADFCE /* GoogleService-Info.plist */,
 				140DD1E51AFB132300B0A6BC /* Supporting Files */,
 				0B3162F91B30128B0031D6F0 /* Localizable.strings */,
@@ -304,6 +313,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA89AA381C5C1464007535B0 /* requestpage.png in Resources */,
+				FA6FB2421C5C4B8800845C04 /* Raleway-Regular.ttf in Resources */,
+				FA6FB2401C5C4B0900845C04 /* YanoneKaffeesatz-Regular.ttf in Resources */,
 				FA06ED4A1C56DEB3009737BC /* profile@3x.png in Resources */,
 				FA89AA391C5C1464007535B0 /* requestpageheader.png in Resources */,
 				0B814CC11B30025800DA5100 /* Main.storyboard in Resources */,
@@ -316,6 +327,7 @@
 				FA06ED451C56DE10009737BC /* location@2x.png in Resources */,
 				FA6232A11C4B3C2E004A2D02 /* blogo.png in Resources */,
 				14EF4EF21B03ED3900DB301A /* Images.xcassets in Resources */,
+				FA6FB2441C5C4E8B00845C04 /* Raleway-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
