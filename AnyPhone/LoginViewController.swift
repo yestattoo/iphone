@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
   }
 
   func step2() {
-    phoneNumber = textField.text!
+    phoneNumber = " " + textField.text!
     textField.text = ""
     textField.placeholder = "1234"
     questionLabel.text = NSLocalizedString("enterCode", comment: "Enter the 4-digit confirmation code:")
