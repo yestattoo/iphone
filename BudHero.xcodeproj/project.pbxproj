@@ -52,6 +52,7 @@
 		FAD255071C56FA530034AB90 /* SearchHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD255031C56FA530034AB90 /* SearchHistoryManager.swift */; };
 		FAD880551C4B0D1100B45893 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD880541C4B0D1100B45893 /* RequestViewController.swift */; };
 		FAF9CCFB1C5BF82500CADFCE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF9CCFA1C5BF82500CADFCE /* GoogleService-Info.plist */; };
+		FAFC8F901C5D6E5700F6117D /* purpleline.png in Resources */ = {isa = PBXBuildFile; fileRef = FAFC8F8F1C5D6E5700F6117D /* purpleline.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,7 @@
 		FAD255031C56FA530034AB90 /* SearchHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryManager.swift; sourceTree = "<group>"; };
 		FAD880541C4B0D1100B45893 /* RequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		FAF9CCFA1C5BF82500CADFCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAFC8F8F1C5D6E5700F6117D /* purpleline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purpleline.png; sourceTree = "<group>"; };
 		FE83987CF325CD623E2EAA0B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 				FA89AA361C5C1464007535B0 /* requestpage.png */,
 				FA06ED471C56DEB3009737BC /* profile@2x.png */,
 				FA06ED481C56DEB3009737BC /* profile@3x.png */,
+				FAFC8F8F1C5D6E5700F6117D /* purpleline.png */,
 				FA06ED441C56DE10009737BC /* location@3x.png */,
 				FA6FB23F1C5C4B0900845C04 /* YanoneKaffeesatz-Regular.ttf */,
 				FA6FB2411C5C4B8800845C04 /* Raleway-Regular.ttf */,
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA89AA381C5C1464007535B0 /* requestpage.png in Resources */,
+				FAFC8F901C5D6E5700F6117D /* purpleline.png in Resources */,
 				FA6FB2421C5C4B8800845C04 /* Raleway-Regular.ttf in Resources */,
 				FA6FB2401C5C4B0900845C04 /* YanoneKaffeesatz-Regular.ttf in Resources */,
 				FA06ED4A1C56DEB3009737BC /* profile@3x.png in Resources */,
@@ -455,6 +459,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -478,6 +483,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "21202405-fe6e-4d72-889c-c97a7456cf72";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,6 +507,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -516,6 +523,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "21202405-fe6e-4d72-889c-c97a7456cf72";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

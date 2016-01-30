@@ -30,8 +30,6 @@ class LoginViewController: UIViewController {
     sendCodeButton.layer.cornerRadius = 3
 
     self.editing = true
-    
-    
   }
 
   override func shouldAutorotate() -> Bool {
