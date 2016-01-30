@@ -40,7 +40,6 @@
 		FA6FB2441C5C4E8B00845C04 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6FB2431C5C4E8B00845C04 /* Raleway-Bold.ttf */; };
 		FA79E7C91C4B1C1C00144FE4 /* OneShotLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79E7C81C4B1C1C00144FE4 /* OneShotLocationManager.swift */; };
 		FA89AA381C5C1464007535B0 /* requestpage.png in Resources */ = {isa = PBXBuildFile; fileRef = FA89AA361C5C1464007535B0 /* requestpage.png */; };
-		FA89AA391C5C1464007535B0 /* requestpageheader.png in Resources */ = {isa = PBXBuildFile; fileRef = FA89AA371C5C1464007535B0 /* requestpageheader.png */; };
 		FAC9B9B21C558AEF00F4D980 /* ConversationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B9AF1C558AEF00F4D980 /* ConversationListViewController.swift */; };
 		FAC9B9B31C558AEF00F4D980 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B9B01C558AEF00F4D980 /* ConversationViewController.swift */; };
 		FAC9B9B41C558AEF00F4D980 /* ParticipantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B9B11C558AEF00F4D980 /* ParticipantTableViewController.swift */; };
@@ -95,7 +94,6 @@
 		FA6FB2431C5C4E8B00845C04 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		FA79E7C81C4B1C1C00144FE4 /* OneShotLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneShotLocationManager.swift; sourceTree = "<group>"; };
 		FA89AA361C5C1464007535B0 /* requestpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = requestpage.png; sourceTree = "<group>"; };
-		FA89AA371C5C1464007535B0 /* requestpageheader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = requestpageheader.png; sourceTree = "<group>"; };
 		FAC9B9AF1C558AEF00F4D980 /* ConversationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationListViewController.swift; sourceTree = "<group>"; };
 		FAC9B9B01C558AEF00F4D980 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		FAC9B9B11C558AEF00F4D980 /* ParticipantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantTableViewController.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 				FA6232A21C4B3D44004A2D02 /* budherologo.png */,
 				FA06ED431C56DE10009737BC /* location@2x.png */,
 				FA89AA361C5C1464007535B0 /* requestpage.png */,
-				FA89AA371C5C1464007535B0 /* requestpageheader.png */,
 				FA06ED471C56DEB3009737BC /* profile@2x.png */,
 				FA06ED481C56DEB3009737BC /* profile@3x.png */,
 				FA06ED441C56DE10009737BC /* location@3x.png */,
@@ -316,7 +313,6 @@
 				FA6FB2421C5C4B8800845C04 /* Raleway-Regular.ttf in Resources */,
 				FA6FB2401C5C4B0900845C04 /* YanoneKaffeesatz-Regular.ttf in Resources */,
 				FA06ED4A1C56DEB3009737BC /* profile@3x.png in Resources */,
-				FA89AA391C5C1464007535B0 /* requestpageheader.png in Resources */,
 				0B814CC11B30025800DA5100 /* Main.storyboard in Resources */,
 				0B3162F71B30128B0031D6F0 /* Localizable.strings in Resources */,
 				FA06ED461C56DE10009737BC /* location@3x.png in Resources */,
