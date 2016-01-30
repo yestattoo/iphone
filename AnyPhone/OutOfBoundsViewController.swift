@@ -6,10 +6,13 @@
 //  Copyright © 2016 parse. All rights reserved.
 //
 
+import Parse
 import UIKit
 
 class OutOfBoundsViewController: UIViewController, UITextViewDelegate {
 
+  var reallocation : [NSString:NSString]?
+  
   @IBOutlet weak var emailTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,13 +46,44 @@ class OutOfBoundsViewController: UIViewController, UITextViewDelegate {
       
       let text = emailTextView.text
       
-        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+      var gameScore = PFObject(className: "OutOfRange")
+      gameScore.setObject(text, forKey: "email")
+      
+      if let lat = self.reallocation!["lat"]{
+        gameScore.setObject(lat as String, forKey: "lat")
+      }
+      if let long = self.reallocation!["long"]{
+        gameScore.setObject(long as String, forKey: "long")
+      }
+      
 
-        
-        })
+      gameScore.saveInBackgroundWithBlock {
+        (success: Bool, error: NSError?) -> Void in
+        if (success) {
+          // The object has been saved.
+          self.dismissViewControllerAnimated(true) { () -> Void in
+            
+            
+          }
+        } else {
+          // There was a problem, check error.description
+          let alert = UIAlertController(title: "Error Please Try Again", message: error?.description, preferredStyle: UIAlertControllerStyle.Alert)
+          alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+          self.presentViewController(alert, animated: true, completion: nil)
+        }
+      }
+      
     }
     return true
   }
+  
+  func buttonTapped(){
+    print("saved")
+    
+  
+  }
+  
+  
   
   override func shouldAutorotate() -> Bool {
     return false

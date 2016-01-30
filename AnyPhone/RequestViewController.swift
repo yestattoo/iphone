@@ -274,6 +274,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     self.requestButton.enabled = true
     let vc : OutOfBoundsViewController = storyboard.instantiateViewControllerWithIdentifier("OutOfBoundsViewController") as! OutOfBoundsViewController
+    vc.reallocation = self.reallocation
     self.presentViewController(vc, animated: true, completion: nil)
     
     return
