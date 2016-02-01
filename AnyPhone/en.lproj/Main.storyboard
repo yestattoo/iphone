@@ -153,6 +153,7 @@
                                 </state>
                                 <connections>
                                     <action selector="clickedPrivacy:" destination="mL8-Zg-hMd" eventType="touchUpInside" id="bXH-zc-MRa"/>
+                                    <action selector="goTioPrivacy:" destination="4K7-kW-uU5" eventType="touchUpInside" id="rK6-pP-9G1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0f-P2-7Zf">
@@ -162,6 +163,7 @@
                                 </state>
                                 <connections>
                                     <action selector="clickedTerms:" destination="mL8-Zg-hMd" eventType="touchUpInside" id="1fM-BJ-Srq"/>
+                                    <action selector="goToTerms:" destination="4K7-kW-uU5" eventType="touchUpInside" id="8I1-ss-SVJ"/>
                                 </connections>
                             </button>
                         </subviews>

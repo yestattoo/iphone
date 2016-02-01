@@ -4,16 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Atlas-AtlasResource.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Atlas.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,11 +27,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09F43C198D165E0BE7AD51FA45EEDBC2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>57ADC05E440A960212657DE6DA1FEDD5</key>
 		<dict>
 			<key>primary</key>
@@ -52,12 +37,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EAE86DCA2A1E93C80CBD483354D79D44</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EEFEABB678A5C21ADB2219C8D57B8959</key>
+		<key>D246A0B888290794D4C0B85F475DBC51</key>
 		<dict>
 			<key>primary</key>
 			<true/>
