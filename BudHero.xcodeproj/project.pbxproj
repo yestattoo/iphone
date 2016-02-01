@@ -140,7 +140,7 @@
 		140DD1D91AFB132300B0A6BC = {
 			isa = PBXGroup;
 			children = (
-				140DD1E41AFB132300B0A6BC /* AnyPhone */,
+				140DD1E41AFB132300B0A6BC /* Budhero */,
 				F81D4B8A17B629483F289FB7 /* Pods */,
 				9EF56FE8626EA95B5B91239C /* Frameworks */,
 				FA60F9401C56BBD300222DE1 /* BudHero.app */,
@@ -149,7 +149,7 @@
 			sourceTree = "<group>";
 			tabWidth = 2;
 		};
-		140DD1E41AFB132300B0A6BC /* AnyPhone */ = {
+		140DD1E41AFB132300B0A6BC /* Budhero */ = {
 			isa = PBXGroup;
 			children = (
 				FAD254FE1C56FA470034AB90 /* Location */,
@@ -180,6 +180,7 @@
 				140DD1E51AFB132300B0A6BC /* Supporting Files */,
 				0B3162F91B30128B0031D6F0 /* Localizable.strings */,
 			);
+			name = Budhero;
 			path = AnyPhone;
 			sourceTree = "<group>";
 		};

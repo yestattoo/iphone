@@ -270,17 +270,20 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   }
   
   func sendRequest(){
+    let params = NSMutableDictionary()
+    params.setObject( "test", forKey: "test" )
+    params.setObject(self.reallocation!, forKey: "location")
     
     print("send request")
-    PFCloud.callFunctionInBackground("request", withParameters: ["location" : self.reallocation!], block: { (object: AnyObject?, error) -> Void in
+    PFCloud.callFunctionInBackground("request", withParameters: params as [NSObject : AnyObject], block: { (object: AnyObject?, error) -> Void in
       if error == nil {
         
         self.goToReq()
         
       } else {
-        print(error)
         
-        if(error?.code==141){
+        // alternative: not case sensitive
+        if error?.description.lowercaseString.rangeOfString("out of area") != nil {
           print("out of area")
           let storyboard = UIStoryboard(name: "Main", bundle: nil)
           self.requestButton.enabled = true
@@ -288,8 +291,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
           vc.reallocation = self.reallocation
           self.presentViewController(vc, animated: true, completion: nil)
         }
-        NSLog("sent")
-        // Do error handling
+        
       }
       
       self.requestButton.enabled = true
