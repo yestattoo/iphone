@@ -271,14 +271,6 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   
   func sendRequest(){
     
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    self.requestButton.enabled = true
-    let vc : OutOfBoundsViewController = storyboard.instantiateViewControllerWithIdentifier("OutOfBoundsViewController") as! OutOfBoundsViewController
-    vc.reallocation = self.reallocation
-    self.presentViewController(vc, animated: true, completion: nil)
-    
-    return
-      
     print("send request")
     PFCloud.callFunctionInBackground("request", withParameters: ["location" : self.reallocation!], block: { (object: AnyObject?, error) -> Void in
       if error == nil {
@@ -286,8 +278,15 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
         self.goToReq()
         
       } else {
-        if(error?.code==420){
+        print(error)
+        
+        if(error?.code==141){
           print("out of area")
+          let storyboard = UIStoryboard(name: "Main", bundle: nil)
+          self.requestButton.enabled = true
+          let vc : OutOfBoundsViewController = storyboard.instantiateViewControllerWithIdentifier("OutOfBoundsViewController") as! OutOfBoundsViewController
+          vc.reallocation = self.reallocation
+          self.presentViewController(vc, animated: true, completion: nil)
         }
         NSLog("sent")
         // Do error handling

@@ -283,7 +283,7 @@
 				TargetAttributes = {
 					140DD1E11AFB132300B0A6BC = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 55NN688S43;
+						DevelopmentTeam = 79XAL2D3VW;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -545,7 +545,7 @@
 				INFOPLIST_FILE = AnyPhone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.budhero.BudHero;
+				PRODUCT_BUNDLE_IDENTIFIER = com.budhero.bh;
 				PRODUCT_NAME = BudHero;
 				PROVISIONING_PROFILE = "";
 			};
@@ -566,7 +566,7 @@
 				INFOPLIST_FILE = AnyPhone/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.budhero.BudHero;
+				PRODUCT_BUNDLE_IDENTIFIER = com.budhero.bh;
 				PRODUCT_NAME = BudHero;
 				PROVISIONING_PROFILE = "";
 			};
