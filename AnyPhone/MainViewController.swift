@@ -120,6 +120,16 @@ class MainViewController: UIViewController {
     return false
   }
 
+  @IBAction func clickedPrivacy(sender: UIButton) {
+    if let url = NSURL(string: "https://www.budhero.com/privacy") {
+      UIApplication.sharedApplication().openURL(url)
+    }
+  }
+  @IBAction func clickedTerms(sender: UIButton) {
+    if let url = NSURL(string: "https://www.budhero.com/terms") {
+      UIApplication.sharedApplication().openURL(url)
+    }
+  }
   func checkSettingsForUser(user: PFUser) {
     if checkSetting(user, settingName: "flower") {
       setting1.setOn(true, animated: false)
