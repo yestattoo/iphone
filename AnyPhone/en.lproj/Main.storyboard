@@ -1257,15 +1257,15 @@
                                 <exclude reference="Vf4-uY-agu"/>
                                 <exclude reference="ZCy-pp-OGd"/>
                                 <exclude reference="ony-0g-zM3"/>
-                                <exclude reference="VUk-zt-JgY"/>
-                                <exclude reference="cIX-86-y2V"/>
-                                <exclude reference="csW-CZ-G2F"/>
-                                <exclude reference="wtS-k8-EiH"/>
                                 <exclude reference="4Wn-Bg-TGS"/>
                                 <exclude reference="JzX-an-Odl"/>
                                 <exclude reference="NA2-Vd-X3v"/>
                                 <exclude reference="UB7-id-3uL"/>
                                 <exclude reference="y8B-As-chh"/>
+                                <exclude reference="VUk-zt-JgY"/>
+                                <exclude reference="cIX-86-y2V"/>
+                                <exclude reference="csW-CZ-G2F"/>
+                                <exclude reference="wtS-k8-EiH"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1279,15 +1279,15 @@
                                 <include reference="Vf4-uY-agu"/>
                                 <include reference="ZCy-pp-OGd"/>
                                 <include reference="ony-0g-zM3"/>
-                                <include reference="VUk-zt-JgY"/>
-                                <include reference="cIX-86-y2V"/>
-                                <include reference="csW-CZ-G2F"/>
-                                <include reference="wtS-k8-EiH"/>
                                 <include reference="4Wn-Bg-TGS"/>
                                 <include reference="JzX-an-Odl"/>
                                 <include reference="NA2-Vd-X3v"/>
                                 <include reference="UB7-id-3uL"/>
                                 <include reference="y8B-As-chh"/>
+                                <include reference="VUk-zt-JgY"/>
+                                <include reference="cIX-86-y2V"/>
+                                <include reference="csW-CZ-G2F"/>
+                                <include reference="wtS-k8-EiH"/>
                             </mask>
                         </variation>
                     </view>

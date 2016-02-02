@@ -37,7 +37,7 @@ class OrderViewController: UIViewController, MFMessageComposeViewControllerDeleg
   func message(){
     if (MFMessageComposeViewController.canSendText()) {
       let controller = MFMessageComposeViewController()
-      controller.body = "BudHero Message:  "
+      controller.body = "Budhero Message:  "
 //      controller.recipients = ["14154624372"]
       controller.recipients = ["14086551636"]
       controller.messageComposeDelegate = self

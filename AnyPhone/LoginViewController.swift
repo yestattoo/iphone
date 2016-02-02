@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Bolts
 import Parse
 import Google
 
