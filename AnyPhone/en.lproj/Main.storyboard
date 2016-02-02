@@ -548,14 +548,14 @@
                                         <exclude reference="ub2-Bf-u1Y"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="1ek-lk-g5B"/>
-                                        <exclude reference="AcJ-uc-8zf"/>
                                         <exclude reference="HZ7-IJ-Cwk"/>
                                         <exclude reference="IWj-JP-Mug"/>
                                         <exclude reference="Izm-5R-SPy"/>
                                         <exclude reference="LDP-RU-url"/>
                                         <exclude reference="PdR-eo-XPy"/>
                                         <exclude reference="tzQ-yh-KFY"/>
+                                        <exclude reference="1ek-lk-g5B"/>
+                                        <exclude reference="AcJ-uc-8zf"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -564,14 +564,14 @@
                                         <include reference="ub2-Bf-u1Y"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="1ek-lk-g5B"/>
-                                        <include reference="AcJ-uc-8zf"/>
                                         <include reference="HZ7-IJ-Cwk"/>
                                         <include reference="IWj-JP-Mug"/>
                                         <include reference="Izm-5R-SPy"/>
                                         <include reference="LDP-RU-url"/>
                                         <include reference="PdR-eo-XPy"/>
                                         <include reference="tzQ-yh-KFY"/>
+                                        <include reference="1ek-lk-g5B"/>
+                                        <include reference="AcJ-uc-8zf"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -1170,13 +1170,23 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BgR-Hr-UzX">
                                 <rect key="frame" x="26" y="307" width="322" height="53"/>
                                 <color key="backgroundColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="TZW-7n-oo5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="33"/>
                                 <state key="normal" title=" Message">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="190" width="400" height="60"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TZW-7n-oo5"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="TZW-7n-oo5"/>
+                                    </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="30" y="332.5" width="606" height="35"/>
@@ -1185,25 +1195,26 @@
                                     <action selector="didTapSendCodeButton" destination="4K7-kW-uU5" eventType="touchUpInside" id="nP1-qX-7Bh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your cannabis expert is on their way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="160.5" translatesAutoresizingMaskIntoConstraints="NO" id="6gV-vi-lIz">
-                                <rect key="frame" x="25" y="202" width="334" height="21"/>
-                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="25"/>
-                                <color key="textColor" red="0.1529411765" green="0.0" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="69" y="20" width="263.5" height="94"/>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eht-JG-zJc">
                                 <rect key="frame" x="26" y="307" width="322" height="53"/>
                                 <color key="backgroundColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="dZg-hx-UoT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="31"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="122" width="400" height="60"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dZg-hx-UoT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="dZg-hx-UoT"/>
+                                    </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="30" y="332.5" width="606" height="35"/>
@@ -1212,20 +1223,71 @@
                                     <action selector="didTapSendCodeButton" destination="4K7-kW-uU5" eventType="touchUpInside" id="p5A-Qr-8lr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your cannabis expert is on their way" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="160.5" translatesAutoresizingMaskIntoConstraints="NO" id="6gV-vi-lIz">
+                                <rect key="frame" x="25" y="202" width="334" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="25"/>
+                                <color key="textColor" red="0.1529411765" green="0.0" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BgR-Hr-UzX" firstAttribute="top" secondItem="Eht-JG-zJc" secondAttribute="bottom" constant="29" id="4Wn-Bg-TGS"/>
+                            <constraint firstItem="6gV-vi-lIz" firstAttribute="top" secondItem="kIV-2Z-flh" secondAttribute="bottom" constant="8" id="IFs-FQ-iQI"/>
+                            <constraint firstItem="BgR-Hr-UzX" firstAttribute="centerX" secondItem="NoF-2c-WGY" secondAttribute="centerX" id="JzX-an-Odl"/>
+                            <constraint firstItem="BgR-Hr-UzX" firstAttribute="top" secondItem="Eht-JG-zJc" secondAttribute="bottom" constant="29" id="NA2-Vd-X3v"/>
+                            <constraint firstItem="BgR-Hr-UzX" firstAttribute="leading" secondItem="NoF-2c-WGY" secondAttribute="leadingMargin" constant="15" id="UB7-id-3uL"/>
+                            <constraint firstItem="Eht-JG-zJc" firstAttribute="leading" secondItem="NoF-2c-WGY" secondAttribute="leadingMargin" constant="15" id="VUk-zt-JgY"/>
+                            <constraint firstItem="6gV-vi-lIz" firstAttribute="centerX" secondItem="NoF-2c-WGY" secondAttribute="centerX" id="Vf4-uY-agu"/>
+                            <constraint firstItem="6gV-vi-lIz" firstAttribute="leading" secondItem="NoF-2c-WGY" secondAttribute="leadingMargin" constant="15" id="ZCy-pp-OGd"/>
+                            <constraint firstItem="Eht-JG-zJc" firstAttribute="centerX" secondItem="NoF-2c-WGY" secondAttribute="centerX" id="cIX-86-y2V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Eht-JG-zJc" secondAttribute="trailing" constant="15" id="csW-CZ-G2F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6gV-vi-lIz" secondAttribute="trailing" constant="15" id="ony-0g-zM3"/>
+                            <constraint firstItem="Eht-JG-zJc" firstAttribute="centerY" secondItem="NoF-2c-WGY" secondAttribute="centerY" id="wtS-k8-EiH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BgR-Hr-UzX" secondAttribute="trailing" constant="15" id="y8B-As-chh"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="BgR-Hr-UzX"/>
-                                <exclude reference="6gV-vi-lIz"/>
                                 <exclude reference="Eht-JG-zJc"/>
+                                <exclude reference="6gV-vi-lIz"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="IFs-FQ-iQI"/>
+                                <exclude reference="Vf4-uY-agu"/>
+                                <exclude reference="ZCy-pp-OGd"/>
+                                <exclude reference="ony-0g-zM3"/>
+                                <exclude reference="VUk-zt-JgY"/>
+                                <exclude reference="cIX-86-y2V"/>
+                                <exclude reference="csW-CZ-G2F"/>
+                                <exclude reference="wtS-k8-EiH"/>
+                                <exclude reference="4Wn-Bg-TGS"/>
+                                <exclude reference="JzX-an-Odl"/>
+                                <exclude reference="NA2-Vd-X3v"/>
+                                <exclude reference="UB7-id-3uL"/>
+                                <exclude reference="y8B-As-chh"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="BgR-Hr-UzX"/>
-                                <include reference="6gV-vi-lIz"/>
                                 <include reference="Eht-JG-zJc"/>
+                                <include reference="6gV-vi-lIz"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="IFs-FQ-iQI"/>
+                                <include reference="Vf4-uY-agu"/>
+                                <include reference="ZCy-pp-OGd"/>
+                                <include reference="ony-0g-zM3"/>
+                                <include reference="VUk-zt-JgY"/>
+                                <include reference="cIX-86-y2V"/>
+                                <include reference="csW-CZ-G2F"/>
+                                <include reference="wtS-k8-EiH"/>
+                                <include reference="4Wn-Bg-TGS"/>
+                                <include reference="JzX-an-Odl"/>
+                                <include reference="NA2-Vd-X3v"/>
+                                <include reference="UB7-id-3uL"/>
+                                <include reference="y8B-As-chh"/>
                             </mask>
                         </variation>
                     </view>

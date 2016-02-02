@@ -23,7 +23,6 @@ class OrderViewController: UIViewController, MFMessageComposeViewControllerDeleg
 
         // Do any additional setup after loading the view.
       
-      
       self.cancelButton.addTarget(self, action: "cancel", forControlEvents: UIControlEvents.TouchUpInside)
       self.messageButton.addTarget(self, action: "message", forControlEvents: UIControlEvents.TouchUpInside)
       
