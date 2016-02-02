@@ -10,7 +10,6 @@ import UIKit
 import Parse
 import MapKit
 import MessageUI
-import Atlas
 import Google
 
 class OrderViewController: UIViewController, MFMessageComposeViewControllerDelegate {
@@ -18,11 +17,6 @@ class OrderViewController: UIViewController, MFMessageComposeViewControllerDeleg
   @IBOutlet weak var cancelButton: UIButton!
   @IBOutlet weak var messageButton: UIButton!
   
-  
-  
-  var layerClient: LYRClient!
-  var conversationListViewController: ConversationListViewController!
-
   
     override func viewDidLoad() {
         super.viewDidLoad()

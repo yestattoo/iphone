@@ -9,14 +9,12 @@
 
 import UIKit
 import Parse
-import Atlas
 import Google
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-  var layerClient: LYRClient!
   
   let ParseAppIDString: String = "eIvJ40jzlYcsYzxcRamj3tMgb5IufW7FZw4JpwH9"
   let ParseClientKeyString: String = "1DYlnZYhoev4mglYW2TizFMwzEZwrhxC8IEjxXxC"

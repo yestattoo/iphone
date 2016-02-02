@@ -41,11 +41,6 @@
 		FA6FB2441C5C4E8B00845C04 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA6FB2431C5C4E8B00845C04 /* Raleway-Bold.ttf */; };
 		FA79E7C91C4B1C1C00144FE4 /* OneShotLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79E7C81C4B1C1C00144FE4 /* OneShotLocationManager.swift */; };
 		FA89AA381C5C1464007535B0 /* requestpage.png in Resources */ = {isa = PBXBuildFile; fileRef = FA89AA361C5C1464007535B0 /* requestpage.png */; };
-		FAC9B9B21C558AEF00F4D980 /* ConversationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B9AF1C558AEF00F4D980 /* ConversationListViewController.swift */; };
-		FAC9B9B31C558AEF00F4D980 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B9B01C558AEF00F4D980 /* ConversationViewController.swift */; };
-		FAC9B9B41C558AEF00F4D980 /* ParticipantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B9B11C558AEF00F4D980 /* ParticipantTableViewController.swift */; };
-		FAC9B9B71C558B3400F4D980 /* PFUser+ATLParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B9B51C558B3400F4D980 /* PFUser+ATLParticipant.swift */; };
-		FAC9B9B81C558B3400F4D980 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9B9B61C558B3400F4D980 /* UserManager.swift */; };
 		FAD255041C56FA530034AB90 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD254FF1C56FA530034AB90 /* Location.swift */; };
 		FAD255051C56FA530034AB90 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD255011C56FA530034AB90 /* LocationPickerViewController.swift */; };
 		FAD255061C56FA530034AB90 /* LocationSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD255021C56FA530034AB90 /* LocationSearchResultsViewController.swift */; };
@@ -97,12 +92,6 @@
 		FA6FB2431C5C4E8B00845C04 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
 		FA79E7C81C4B1C1C00144FE4 /* OneShotLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneShotLocationManager.swift; sourceTree = "<group>"; };
 		FA89AA361C5C1464007535B0 /* requestpage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = requestpage.png; sourceTree = "<group>"; };
-		FAC9B9AF1C558AEF00F4D980 /* ConversationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationListViewController.swift; sourceTree = "<group>"; };
-		FAC9B9B01C558AEF00F4D980 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
-		FAC9B9B11C558AEF00F4D980 /* ParticipantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantTableViewController.swift; sourceTree = "<group>"; };
-		FAC9B9B51C558B3400F4D980 /* PFUser+ATLParticipant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PFUser+ATLParticipant.swift"; sourceTree = "<group>"; };
-		FAC9B9B61C558B3400F4D980 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
-		FAC9B9B91C55973800F4D980 /* Layer-Parse-iOS-Swift-Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Layer-Parse-iOS-Swift-Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		FAD254FF1C56FA530034AB90 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FAD255001C56FA530034AB90 /* LocationPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPicker.h; sourceTree = "<group>"; };
 		FAD255011C56FA530034AB90 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				FAD254FE1C56FA470034AB90 /* Location */,
-				FAC9B9AE1C558AE100F4D980 /* Messaging */,
 				FA79E7C81C4B1C1C00144FE4 /* OneShotLocationManager.swift */,
 				FA3712861C5C681700C7D31E /* OutOfBoundsViewController.swift */,
 				140DD1E71AFB132300B0A6BC /* AppDelegate.swift */,
@@ -220,19 +208,6 @@
 				B0523284BCE479D35A0920FE /* Pods.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		FAC9B9AE1C558AE100F4D980 /* Messaging */ = {
-			isa = PBXGroup;
-			children = (
-				FAC9B9B91C55973800F4D980 /* Layer-Parse-iOS-Swift-Example-Bridging-Header.h */,
-				FAC9B9B51C558B3400F4D980 /* PFUser+ATLParticipant.swift */,
-				FAC9B9B61C558B3400F4D980 /* UserManager.swift */,
-				FAC9B9AF1C558AEF00F4D980 /* ConversationListViewController.swift */,
-				FAC9B9B01C558AEF00F4D980 /* ConversationViewController.swift */,
-				FAC9B9B11C558AEF00F4D980 /* ParticipantTableViewController.swift */,
-			);
-			name = Messaging;
 			sourceTree = "<group>";
 		};
 		FAD254FE1C56FA470034AB90 /* Location */ = {
@@ -394,7 +369,6 @@
 				140DD2261AFB19F600B0A6BC /* LoginViewController.swift in Sources */,
 				FAD255051C56FA530034AB90 /* LocationPickerViewController.swift in Sources */,
 				FA79E7C91C4B1C1C00144FE4 /* OneShotLocationManager.swift in Sources */,
-				FAC9B9B31C558AEF00F4D980 /* ConversationViewController.swift in Sources */,
 				FA3712871C5C681700C7D31E /* OutOfBoundsViewController.swift in Sources */,
 				140DD1EA1AFB132300B0A6BC /* InitialViewController.swift in Sources */,
 				FA58651B1C4B258B003BD5D7 /* OrderViewController.swift in Sources */,
@@ -402,12 +376,8 @@
 				FAD880551C4B0D1100B45893 /* RequestViewController.swift in Sources */,
 				FAD255071C56FA530034AB90 /* SearchHistoryManager.swift in Sources */,
 				FAD255041C56FA530034AB90 /* Location.swift in Sources */,
-				FAC9B9B81C558B3400F4D980 /* UserManager.swift in Sources */,
-				FAC9B9B71C558B3400F4D980 /* PFUser+ATLParticipant.swift in Sources */,
-				FAC9B9B21C558AEF00F4D980 /* ConversationListViewController.swift in Sources */,
 				140DD1E81AFB132300B0A6BC /* AppDelegate.swift in Sources */,
 				140DD2281AFB2A9C00B0A6BC /* MainViewController.swift in Sources */,
-				FAC9B9B41C558AEF00F4D980 /* ParticipantTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

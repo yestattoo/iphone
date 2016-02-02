@@ -9,7 +9,6 @@
 import UIKit
 import Bolts
 import Parse
-import Atlas
 import Google
 
 class LoginViewController: UIViewController {
@@ -22,8 +21,6 @@ class LoginViewController: UIViewController {
 
   var phoneNumber: String = ""
   
-  var layerClient: LYRClient!
-
   override func viewDidLoad() {
     super.viewDidLoad()
     step1()
@@ -165,12 +162,12 @@ class LoginViewController: UIViewController {
   }
 
   @IBAction func goTioPrivacy(sender: UIButton) {
-    if let url = NSURL(string: "https://www.budhero.com/privacy") {
+    if let url = NSURL(string: "http://www.budhero.com/privacy") {
       UIApplication.sharedApplication().openURL(url)
     }
   }
   @IBAction func goToTerms(sender: UIButton) {
-    if let url = NSURL(string: "https://www.budhero.com/terms") {
+    if let url = NSURL(string: "http://www.budhero.com/terms") {
       UIApplication.sharedApplication().openURL(url)
     }
   }

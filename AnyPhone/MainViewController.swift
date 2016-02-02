@@ -121,12 +121,12 @@ class MainViewController: UIViewController {
   }
 
   @IBAction func clickedPrivacy(sender: UIButton) {
-    if let url = NSURL(string: "https://www.budhero.com/privacy") {
+    if let url = NSURL(string: "http://www.budhero.com/privacy") {
       UIApplication.sharedApplication().openURL(url)
     }
   }
   @IBAction func clickedTerms(sender: UIButton) {
-    if let url = NSURL(string: "https://www.budhero.com/terms") {
+    if let url = NSURL(string: "http://www.budhero.com/terms") {
       UIApplication.sharedApplication().openURL(url)
     }
   }

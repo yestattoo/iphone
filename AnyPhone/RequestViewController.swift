@@ -10,7 +10,6 @@ import UIKit
 import Parse
 import AddressBookUI
 import MapKit
-import Atlas
 import Google
 
 class RequestViewController: UIViewController, CLLocationManagerDelegate, UITextViewDelegate, MKMapViewDelegate, UpdateAddyViewControllerDelegate {
