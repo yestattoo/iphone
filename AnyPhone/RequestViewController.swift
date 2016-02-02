@@ -223,7 +223,11 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
       
       if placemarks!.count > 0 {
         let pm = placemarks![0]
-        self.addressTextView.text = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
+        
+        var name = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
+        let nameArr = name.componentsSeparatedByString("\n")
+        
+        self.addressTextView.text = nameArr[0]
         self.reallocation = ["lat":latitudeText,"long":longitudeText, "address":ABCreateStringWithAddressDictionary(pm.addressDictionary!, false) ]
       }
       else {
@@ -260,7 +264,11 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
         
         if placemarks!.count > 0 {
           let pm = placemarks![0]
-          self.addressTextView.text = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
+          
+          var name = ABCreateStringWithAddressDictionary(pm.addressDictionary!, false)
+          let nameArr = name.componentsSeparatedByString("\n")
+          
+          self.addressTextView.text = nameArr[0]
           self.reallocation = ["lat":latitudeText,"long":longitudeText, "address":ABCreateStringWithAddressDictionary(pm.addressDictionary!, false) ]
         }
         else {

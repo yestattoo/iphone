@@ -77,7 +77,12 @@ class MainViewController: UIViewController {
 
   @IBAction func didTapLogOut(sender: AnyObject) {
     PFUser.logOutInBackgroundWithBlock { error in
-      self.dismissViewControllerAnimated(true, completion: nil)
+      
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      let vc : LoginViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+      
+      self.presentViewController(vc, animated: true, completion: nil)
+    
     }
   }
 

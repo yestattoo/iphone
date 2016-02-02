@@ -35,8 +35,8 @@ class LoginViewController: UIViewController {
   func step1() {
     phoneNumber = ""
     textField.placeholder = NSLocalizedString("numberDefault", comment: "555-333-6726")
-    questionLabel.text = NSLocalizedString("enterPhone", comment: "Please enter your phone number to log in.")
-    subtitleLabel.text = NSLocalizedString("enterPhoneExtra", comment: "This example is limited to 10-digit US number.")
+    questionLabel.text = NSLocalizedString("enterPhone", comment: "Welcome to Budhero! Please verify your phone #")
+    subtitleLabel.text = NSLocalizedString("enterPhoneExtra", comment: "By clicking verify, you acknowledge that you have read and agree to the Terms of Use and Privacy Policy.")
     sendCodeButton.enabled = true
     
   }
