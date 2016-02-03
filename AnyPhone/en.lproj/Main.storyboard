@@ -135,11 +135,24 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okh-Ym-RfP">
                                 <rect key="frame" x="26" y="332" width="322" height="53"/>
                                 <color key="backgroundColor" red="0.56470588235294117" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="322" id="10l-Gq-d8a"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="33"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="10l-Gq-d8a"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="10l-Gq-d8a"/>
+                                    </mask>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="30" y="332.5" width="606" height="35"/>
                                 </variation>
@@ -147,6 +160,15 @@
                                     <action selector="didTapSendCodeButton" destination="4K7-kW-uU5" eventType="touchUpInside" id="bfJ-Ff-ETT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Budhero! Please enter your phone #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyv-qQ-F4Y">
+                                <rect key="frame" x="25" y="202" width="334" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="J2H-XC-whW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="14"/>
+                                <color key="textColor" red="0.1529411765" green="0.0" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7y-kG-UOT">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Privacy">
@@ -167,28 +189,15 @@
                                     <action selector="goToTerms:" destination="4K7-kW-uU5" eventType="touchUpInside" id="8I1-ss-SVJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Budhero! Please enter your phone #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyv-qQ-F4Y">
-                                <rect key="frame" x="25" y="202" width="334" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="J2H-XC-whW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="14"/>
-                                <color key="textColor" red="0.1529411765" green="0.0" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="25" y="162" width="323" height="21"/>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yyv-qQ-F4Y" firstAttribute="leading" secondItem="pxY-7T-gxY" secondAttribute="leading" id="0d7-XE-X2K"/>
                             <constraint firstItem="yyv-qQ-F4Y" firstAttribute="top" secondItem="AmZ-Tt-fk4" secondAttribute="bottom" constant="72" id="5Vi-Be-hsY"/>
                             <constraint firstItem="yyv-qQ-F4Y" firstAttribute="trailing" secondItem="7hb-B8-tXy" secondAttribute="trailingMargin" id="6lP-Q2-en9"/>
-                            <constraint firstItem="l0f-P2-7Zf" firstAttribute="top" secondItem="okh-Ym-RfP" secondAttribute="bottom" constant="8" id="Ia6-3L-8GT"/>
                             <constraint firstItem="0rU-A3-Csv" firstAttribute="leading" secondItem="7hb-B8-tXy" secondAttribute="leading" id="LS6-0i-zeb"/>
+                            <constraint firstItem="w7y-kG-UOT" firstAttribute="top" secondItem="okh-Ym-RfP" secondAttribute="bottom" constant="-2" id="OY6-nP-XZw"/>
                             <constraint firstItem="w7y-kG-UOT" firstAttribute="leading" secondItem="l0f-P2-7Zf" secondAttribute="trailing" constant="8" id="S4V-4N-F0C"/>
-                            <constraint firstItem="w7y-kG-UOT" firstAttribute="top" secondItem="okh-Ym-RfP" secondAttribute="bottom" constant="8" id="aXz-sB-59f"/>
                             <constraint firstItem="okh-Ym-RfP" firstAttribute="leading" secondItem="7hb-B8-tXy" secondAttribute="leadingMargin" constant="10" id="cNq-0f-orx"/>
                             <constraint firstItem="AmZ-Tt-fk4" firstAttribute="leading" secondItem="7hb-B8-tXy" secondAttribute="leading" constant="25" id="dn0-sP-mXy"/>
                             <constraint firstItem="pxY-7T-gxY" firstAttribute="leading" secondItem="7hb-B8-tXy" secondAttribute="leading" constant="25" id="e30-4b-tbx"/>
@@ -210,13 +219,12 @@
                                 <exclude reference="l0f-P2-7Zf"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Ia6-3L-8GT"/>
-                                <exclude reference="vkD-6T-qsc"/>
-                                <exclude reference="S4V-4N-F0C"/>
-                                <exclude reference="aXz-sB-59f"/>
-                                <exclude reference="qnV-sn-3eB"/>
                                 <exclude reference="rPn-Hq-XbH"/>
                                 <exclude reference="tsb-bU-rzw"/>
+                                <exclude reference="vkD-6T-qsc"/>
+                                <exclude reference="OY6-nP-XZw"/>
+                                <exclude reference="S4V-4N-F0C"/>
+                                <exclude reference="qnV-sn-3eB"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -225,14 +233,13 @@
                                 <include reference="l0f-P2-7Zf"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Ia6-3L-8GT"/>
-                                <include reference="vkD-6T-qsc"/>
-                                <include reference="S4V-4N-F0C"/>
-                                <include reference="aXz-sB-59f"/>
-                                <include reference="qnV-sn-3eB"/>
                                 <exclude reference="5Vi-Be-hsY"/>
                                 <include reference="rPn-Hq-XbH"/>
                                 <include reference="tsb-bU-rzw"/>
+                                <include reference="vkD-6T-qsc"/>
+                                <include reference="OY6-nP-XZw"/>
+                                <include reference="S4V-4N-F0C"/>
+                                <include reference="qnV-sn-3eB"/>
                             </mask>
                         </variation>
                     </view>
@@ -823,6 +830,8 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="eB6-Tl-iGw"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="addressTextView" destination="yLr-pr-An3" id="bgd-b4-Gwg"/>
                         <outlet property="map" destination="fn2-d3-g4W" id="DAR-M9-Qlk"/>
@@ -833,7 +842,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2HL-Pd-wPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="859.5" y="804.75"/>
+            <point key="canvasLocation" x="1777.5" y="804.75"/>
         </scene>
         <!--Update Addy View Controller-->
         <scene sceneID="PHR-EI-NQg">
@@ -854,7 +863,7 @@
                                     <constraint firstAttribute="width" constant="46" id="tct-Co-tyJ"/>
                                 </constraints>
                                 <state key="normal" title="Back">
-                                    <color key="titleColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.56507291255428349" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -900,7 +909,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VME-ni-dzB">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="20"/>
-                                <color key="textColor" red="0.56470588239999997" green="0.074509803920000006" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.396078431372549" green="0.0" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="purpleline.png" translatesAutoresizingMaskIntoConstraints="NO" id="3u0-ba-Org">
@@ -982,7 +991,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vb2-d1-S1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1566" y="1146"/>
+            <point key="canvasLocation" x="2484" y="1146"/>
         </scene>
         <!--Out Of Bounds View Controller-->
         <scene sceneID="elR-5a-VEX">
@@ -1323,7 +1332,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ao-S3-TOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1663.5" y="612"/>
+            <point key="canvasLocation" x="2581.5" y="612"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zaL-vw-lBS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KV4-ld-nhb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="F3d-w5-4N9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VdK-rM-UKF" kind="relationship" relationship="rootViewController" id="Pzo-cI-84O"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a23-1Y-9Hg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859.5" y="804.75"/>
         </scene>
     </scenes>
     <resources>
