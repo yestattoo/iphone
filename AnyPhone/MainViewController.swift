@@ -48,6 +48,25 @@ class MainViewController: UIViewController {
       print("hi")
       dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    
+    //add navbar at end of viewdidload
+    // Create the navigation bar
+    let navigationBar = self.navigationController?.navigationBar
+    
+    let navbarFont = UIFont(name: "YanoneKaffeesatz-Bold.ttf", size: 19) ?? UIFont.systemFontOfSize(17)
+    var navigationBarAppearance = UINavigationBar.appearance()
+    
+    navigationBarAppearance.titleTextAttributes = [ NSForegroundColorAttributeName: UIColor.whiteColor()]
+    
+    navigationBar!.titleTextAttributes = [ NSForegroundColorAttributeName:UIColor.whiteColor()]
+    
+    // Create a navigation item with a title
+    let navigationItem = UINavigationItem()
+    navigationItem.title = "Budhero"
+    navigationBar.ti
+
   }
 
   @IBAction func backClick(sender: UIButton) {

@@ -12,7 +12,7 @@ import AddressBookUI
 import MapKit
 import Google
 
-class RequestViewController: UIViewController, CLLocationManagerDelegate, UITextViewDelegate, UINavigationBarDelegate, MKMapViewDelegate, UpdateAddyViewControllerDelegate {
+class RequestViewController: UIViewController, CLLocationManagerDelegate, UITextViewDelegate, MKMapViewDelegate, UpdateAddyViewControllerDelegate {
   
   var manager: OneShotLocationManager?
   var reallocation : [NSString:NSString]?
@@ -44,58 +44,9 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
       }
       
       
-      
-      //add navbar at end of viewdidload
-      // Create the navigation bar
-      let navigationBar = UINavigationBar(frame: CGRectMake(0, 0, self.view.frame.size.width, 44)) // Offset by 20 pixels vertically to take the status bar into account
-      
-      let bgcolor: UIColor = UIColor( red: CGFloat(101/255.0), green: CGFloat(0/255.0), blue: CGFloat(252/255.0), alpha: CGFloat(1.0) )
-      
-      navigationBar.barTintColor = bgcolor
-      navigationBar.backgroundColor = bgcolor
-      navigationBar.delegate = self;
-      
-
-      let navbarFont = UIFont(name: "YanoneKaffeesatz-Bold.ttf", size: 19) ?? UIFont.systemFontOfSize(17)
-      var navigationBarAppearance = UINavigationBar.appearance()
-      
-      navigationBarAppearance.titleTextAttributes = [ NSForegroundColorAttributeName: UIColor.whiteColor()]
-      
-      navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName:UIColor.whiteColor()]
-      
-      // Create a navigation item with a title
-      let navigationItem = UINavigationItem()
-      navigationItem.title = "Budhero"
-      
-      // Create left and right button for navigation item
-//      let leftButton =  UIBarButtonItem(title: "Save", style:   UIBarButtonItemStyle.Plain, target: self, action: "btn_clicked:")
-      let rightButton = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.Plain, target: self, action: "btn_clicked:")
-      
-      // Create two buttons for the navigation item
-      //navigationItem.leftBarButtonItem = leftButton
-      navigationItem.rightBarButtonItem = rightButton
-      navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
-      
-      // Assign the navigation item to the navigation bar
-      navigationBar.items = [navigationItem]
-      
-      // Make the navigation bar a subview of the current view controller
-      self.map.addSubview(navigationBar)
-
-  }
-  
-  func btn_clicked(sender: UIBarButtonItem) {
     
-    PFUser.logOutInBackgroundWithBlock { error in
-      
-      let storyboard = UIStoryboard(name: "Main", bundle: nil)
-      let vc : LoginViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
-      
-      self.presentViewController(vc, animated: true, completion: nil)
-      
-    }
+
   }
-  
   
   func buttonAction(sender:UIButton!)
   {
