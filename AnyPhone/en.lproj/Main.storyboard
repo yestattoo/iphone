@@ -484,7 +484,7 @@
                                             <constraint firstItem="lHg-kE-hG6" firstAttribute="leading" secondItem="xGF-UY-no1" secondAttribute="leading" id="y8Z-mS-Iab"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aid-hd-qyg">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PREFERENCES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aid-hd-qyg">
                                         <rect key="frame" x="26" y="232" width="199" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="199" id="lOc-2I-1iB"/>

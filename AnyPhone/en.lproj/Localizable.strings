@@ -9,7 +9,7 @@
 title = "AnyPhone";
 numberDefault = "555-333-6726";
 enterPhone = "Welcome to Budhero! Please verify your phone #";
-enterPhoneExtra = "By clicking verify, you acknowledge that you have read and agree to the Privacy Policy & Terms";
+enterPhoneExtra = "By continuing, you acknowledge that you have read and agree to the Privacy Policy & Terms";
 buttonSubmit = "Continue";
 buttonVerify = "Verify";
 warningPhone = "You must enter a 10-digit US phone number including area code.";

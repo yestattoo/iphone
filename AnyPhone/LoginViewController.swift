@@ -31,6 +31,16 @@ class LoginViewController: UIViewController , UIGestureRecognizerDelegate{
   // Receive action
   func labelAction(gr:UITapGestureRecognizer)
   {
+    
+    let tracker = GAI.sharedInstance().defaultTracker
+    let eventTracker: NSObject = GAIDictionaryBuilder.createEventWithCategory(
+      "Clicked Privacy",
+      action: "Privacy Button",
+      label: "SomeLabel",
+      value: nil).build()
+    tracker.send(eventTracker as! [NSObject : AnyObject])
+    
+    
     if let url = NSURL(string: "http://www.budhero.com/privacy") {
       UIApplication.sharedApplication().openURL(url)
     }
@@ -45,7 +55,7 @@ class LoginViewController: UIViewController , UIGestureRecognizerDelegate{
     phoneNumber = ""
     textField.placeholder = NSLocalizedString("numberDefault", comment: "555-333-6726")
     questionLabel.text = NSLocalizedString("enterPhone", comment: "Welcome to Budhero! Please verify your phone #")
-    subtitleLabel.text = NSLocalizedString("enterPhoneExtra", comment: "By clicking verify, you acknowledge that you have read and agree to the Privacy Policy & Terms")
+    subtitleLabel.text = NSLocalizedString("enterPhoneExtra", comment: "By clicking continuing, you acknowledge that you have read and agree to the Privacy Policy & Terms")
     sendCodeButton.enabled = true
     let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "labelAction:")
     subtitleLabel.userInteractionEnabled = true
