@@ -129,24 +129,11 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okh-Ym-RfP">
                                 <rect key="frame" x="26" y="332" width="322" height="53"/>
                                 <color key="backgroundColor" red="0.56470588235294117" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="322" id="10l-Gq-d8a"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="33"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="10l-Gq-d8a"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="10l-Gq-d8a"/>
-                                    </mask>
-                                </variation>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="30" y="332.5" width="606" height="35"/>
                                 </variation>
@@ -178,7 +165,6 @@
                             <constraint firstItem="yyv-qQ-F4Y" firstAttribute="trailing" secondItem="7hb-B8-tXy" secondAttribute="trailingMargin" id="6lP-Q2-en9"/>
                             <constraint firstItem="0rU-A3-Csv" firstAttribute="leading" secondItem="7hb-B8-tXy" secondAttribute="leading" id="LS6-0i-zeb"/>
                             <constraint firstItem="okh-Ym-RfP" firstAttribute="leading" secondItem="7hb-B8-tXy" secondAttribute="leadingMargin" constant="10" id="cNq-0f-orx"/>
-                            <constraint firstItem="AmZ-Tt-fk4" firstAttribute="leading" secondItem="7hb-B8-tXy" secondAttribute="leading" constant="25" id="dn0-sP-mXy"/>
                             <constraint firstItem="pxY-7T-gxY" firstAttribute="leading" secondItem="7hb-B8-tXy" secondAttribute="leading" constant="25" id="e30-4b-tbx"/>
                             <constraint firstAttribute="trailing" secondItem="0rU-A3-Csv" secondAttribute="trailing" id="eua-jM-sN5"/>
                             <constraint firstItem="AmZ-Tt-fk4" firstAttribute="top" secondItem="uzV-x9-Eam" secondAttribute="bottom" constant="6" id="jjk-dJ-lqK"/>

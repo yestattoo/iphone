@@ -145,7 +145,7 @@ class LoginViewController: UIViewController , UIGestureRecognizerDelegate{
     PFCloud.callFunctionInBackground("logIn", withParameters: params) { response, error in
       if let description = error?.description {
         self.editing = true
-        return self.showAlert("Login Error", message: description)
+        return self.showAlert("Login Error", message: "Invalid Login Parameters")
       }
       if let token = response as? String {
         PFUser.becomeInBackground(token) { user, error in
