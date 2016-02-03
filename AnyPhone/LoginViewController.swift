@@ -67,8 +67,7 @@ class LoginViewController: UIViewController , UIGestureRecognizerDelegate{
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
 
-    //textField.becomeFirstResponder()
-    textField.endEditing(true)
+    textField.becomeFirstResponder()
     
     var tracker = GAI.sharedInstance().defaultTracker
     tracker.set(kGAIScreenName, value: "Login Screen")
