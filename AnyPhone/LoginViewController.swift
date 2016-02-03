@@ -60,6 +60,7 @@ class LoginViewController: UIViewController , UIGestureRecognizerDelegate{
     let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "labelAction:")
     subtitleLabel.userInteractionEnabled = true
     subtitleLabel.addGestureRecognizer(tap)
+    textField.becomeFirstResponder()
     tap.delegate = self // Remember to extend your class with UIGestureRecognizerDelegate
     
   }
@@ -145,7 +146,7 @@ class LoginViewController: UIViewController , UIGestureRecognizerDelegate{
     PFCloud.callFunctionInBackground("logIn", withParameters: params) { response, error in
       if let description = error?.description {
         self.editing = true
-        return self.showAlert("Login Error", message: "Invalid Login Parameters")
+        return self.showAlert("Login Error", message: "Invalid Code")
       }
       if let token = response as? String {
         PFUser.becomeInBackground(token) { user, error in
