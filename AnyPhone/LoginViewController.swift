@@ -53,7 +53,8 @@ class LoginViewController: UIViewController {
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
 
-    textField.becomeFirstResponder()
+    //textField.becomeFirstResponder()
+    textField.endEditing(true)
     
     var tracker = GAI.sharedInstance().defaultTracker
     tracker.set(kGAIScreenName, value: "Login Screen")
@@ -152,7 +153,7 @@ class LoginViewController: UIViewController {
     sendCodeButton.enabled = editing
     textField.enabled = editing
     if editing {
-      textField.becomeFirstResponder()
+      //textField.becomeFirstResponder()
     }
   }
 

@@ -172,9 +172,22 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7y-kG-UOT">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="51" id="jNx-Bv-q8n"/>
+                                </constraints>
                                 <state key="normal" title="Privacy">
                                     <color key="titleColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jNx-Bv-q8n"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="jNx-Bv-q8n"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="clickedPrivacy:" destination="mL8-Zg-hMd" eventType="touchUpInside" id="bXH-zc-MRa"/>
                                     <action selector="goTioPrivacy:" destination="4K7-kW-uU5" eventType="touchUpInside" id="rK6-pP-9G1"/>
@@ -197,8 +210,9 @@
                             <constraint firstItem="yyv-qQ-F4Y" firstAttribute="top" secondItem="AmZ-Tt-fk4" secondAttribute="bottom" constant="72" id="5Vi-Be-hsY"/>
                             <constraint firstItem="yyv-qQ-F4Y" firstAttribute="trailing" secondItem="7hb-B8-tXy" secondAttribute="trailingMargin" id="6lP-Q2-en9"/>
                             <constraint firstItem="0rU-A3-Csv" firstAttribute="leading" secondItem="7hb-B8-tXy" secondAttribute="leading" id="LS6-0i-zeb"/>
-                            <constraint firstItem="w7y-kG-UOT" firstAttribute="top" secondItem="okh-Ym-RfP" secondAttribute="bottom" constant="-2" id="OY6-nP-XZw"/>
+                            <constraint firstItem="dRX-hP-X14" firstAttribute="top" secondItem="l0f-P2-7Zf" secondAttribute="bottom" constant="20" id="OBS-mC-1F7"/>
                             <constraint firstItem="w7y-kG-UOT" firstAttribute="leading" secondItem="l0f-P2-7Zf" secondAttribute="trailing" constant="8" id="S4V-4N-F0C"/>
+                            <constraint firstItem="dRX-hP-X14" firstAttribute="top" secondItem="w7y-kG-UOT" secondAttribute="bottom" constant="20" id="W1C-cv-zd0"/>
                             <constraint firstItem="okh-Ym-RfP" firstAttribute="leading" secondItem="7hb-B8-tXy" secondAttribute="leadingMargin" constant="10" id="cNq-0f-orx"/>
                             <constraint firstItem="AmZ-Tt-fk4" firstAttribute="leading" secondItem="7hb-B8-tXy" secondAttribute="leading" constant="25" id="dn0-sP-mXy"/>
                             <constraint firstItem="pxY-7T-gxY" firstAttribute="leading" secondItem="7hb-B8-tXy" secondAttribute="leading" constant="25" id="e30-4b-tbx"/>
@@ -223,7 +237,8 @@
                                 <exclude reference="rPn-Hq-XbH"/>
                                 <exclude reference="tsb-bU-rzw"/>
                                 <exclude reference="vkD-6T-qsc"/>
-                                <exclude reference="OY6-nP-XZw"/>
+                                <exclude reference="OBS-mC-1F7"/>
+                                <exclude reference="W1C-cv-zd0"/>
                                 <exclude reference="S4V-4N-F0C"/>
                                 <exclude reference="qnV-sn-3eB"/>
                             </mask>
@@ -238,7 +253,8 @@
                                 <include reference="rPn-Hq-XbH"/>
                                 <include reference="tsb-bU-rzw"/>
                                 <include reference="vkD-6T-qsc"/>
-                                <include reference="OY6-nP-XZw"/>
+                                <include reference="OBS-mC-1F7"/>
+                                <include reference="W1C-cv-zd0"/>
                                 <include reference="S4V-4N-F0C"/>
                                 <include reference="qnV-sn-3eB"/>
                             </mask>
