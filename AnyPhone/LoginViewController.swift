@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import Google
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController , UIGestureRecognizerDelegate{
 
   @IBOutlet weak var textField: UITextField!
   @IBOutlet weak var sendCodeButton: UIButton!
@@ -27,6 +27,15 @@ class LoginViewController: UIViewController {
 
     self.editing = true
   }
+  
+  // Receive action
+  func labelAction(gr:UITapGestureRecognizer)
+  {
+    if let url = NSURL(string: "http://www.budhero.com/privacy") {
+      UIApplication.sharedApplication().openURL(url)
+    }
+    
+  }
 
   override func shouldAutorotate() -> Bool {
     return false
@@ -38,6 +47,10 @@ class LoginViewController: UIViewController {
     questionLabel.text = NSLocalizedString("enterPhone", comment: "Welcome to Budhero! Please verify your phone #")
     subtitleLabel.text = NSLocalizedString("enterPhoneExtra", comment: "By clicking verify, you acknowledge that you have read and agree to the Privacy Policy & Terms")
     sendCodeButton.enabled = true
+    let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "labelAction:")
+    subtitleLabel.userInteractionEnabled = true
+    subtitleLabel.addGestureRecognizer(tap)
+    tap.delegate = self // Remember to extend your class with UIGestureRecognizerDelegate
     
   }
 
@@ -47,6 +60,7 @@ class LoginViewController: UIViewController {
     textField.placeholder = "1234"
     questionLabel.text = NSLocalizedString("enterCode", comment: "Enter the 4-digit confirmation code:")
     subtitleLabel.text = NSLocalizedString("enterCodeExtra", comment: "It was sent in an SMS message to +1" + phoneNumber) + phoneNumber
+    subtitleLabel.gestureRecognizers = nil
     sendCodeButton.enabled = true
   }
 

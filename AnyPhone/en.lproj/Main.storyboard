@@ -77,13 +77,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="budherologo.png" translatesAutoresizingMaskIntoConstraints="NO" id="AmZ-Tt-fk4">
-                                <rect key="frame" x="25" y="26" width="114" height="104"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="104" id="D5y-A0-23N"/>
-                                    <constraint firstAttribute="width" constant="300" id="OrR-5D-6lW"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="By clicking verify, you acknowledge that you have read and agree to the" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxY-7T-gxY">
                                 <rect key="frame" x="25" y="223" width="334" height="21"/>
                                 <constraints>
@@ -170,6 +163,13 @@
                                 <color key="textColor" red="0.1529411765" green="0.0" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="budherologo.png" translatesAutoresizingMaskIntoConstraints="NO" id="AmZ-Tt-fk4">
+                                <rect key="frame" x="25" y="26" width="114" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="D5y-A0-23N"/>
+                                    <constraint firstAttribute="width" constant="300" id="OrR-5D-6lW"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -189,15 +189,18 @@
                             <constraint firstItem="pxY-7T-gxY" firstAttribute="top" secondItem="AmZ-Tt-fk4" secondAttribute="bottom" constant="61" id="tsb-bU-rzw"/>
                             <constraint firstItem="0rU-A3-Csv" firstAttribute="top" secondItem="pxY-7T-gxY" secondAttribute="bottom" constant="14" id="tue-Ls-S4u"/>
                             <constraint firstItem="pxY-7T-gxY" firstAttribute="top" secondItem="yyv-qQ-F4Y" secondAttribute="bottom" id="zCo-dJ-a5g"/>
+                            <constraint firstItem="AmZ-Tt-fk4" firstAttribute="centerX" secondItem="7hb-B8-tXy" secondAttribute="centerX" id="zXA-TS-OCk"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="zXA-TS-OCk"/>
                                 <exclude reference="rPn-Hq-XbH"/>
                                 <exclude reference="tsb-bU-rzw"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
+                                <include reference="zXA-TS-OCk"/>
                                 <exclude reference="5Vi-Be-hsY"/>
                                 <include reference="rPn-Hq-XbH"/>
                                 <include reference="tsb-bU-rzw"/>
@@ -260,6 +263,9 @@
                                         <fontDescription key="fontDescription" name="YanoneKaffeesatz-Regular" family="Yanone Kaffeesatz" pointSize="37"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="117" y="10.5" width="141.5" height="43.5"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.56470588235294117" green="0.074509803921568626" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -557,7 +563,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Xr5-hV-F47"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7b6-oN-OPW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fn2-d3-g4W">
