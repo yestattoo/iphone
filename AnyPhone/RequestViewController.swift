@@ -18,6 +18,8 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   var reallocation : [NSString:NSString]?
   var imageView : UIImageView!
   
+  var locText : NSString!
+  
   @IBOutlet weak var profileImageView: UIImageView!
   @IBOutlet weak var map: MKMapView!
   @IBOutlet weak var profileClick: UIButton!
@@ -156,32 +158,48 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
   }
   
   func sendRequest(){
+    
+    
+    if let user = PFUser.currentUser() {
+      
+      user["location"] = self.reallocation
+      user["address"] = self.locText
+      user.saveEventually()
+      
+      var refreshAlert = UIAlertView()
+      refreshAlert.title = "Success!"
+      refreshAlert.message = "Your address has been updated. Please visit our website to request a Budhero to this address"
+      refreshAlert.addButtonWithTitle("OK")
+      refreshAlert.show()
+    }
+    
+    
     let params = NSMutableDictionary()
     params.setObject( "test", forKey: "test" )
     params.setObject(self.reallocation!, forKey: "location")
     
     print("send request")
-    PFCloud.callFunctionInBackground("request", withParameters: params as [NSObject : AnyObject], block: { (object: AnyObject?, error) -> Void in
-      if error == nil {
-        
-        self.goToReq()
-        
-      } else {
-        
-        // alternative: not case sensitive
-        if error?.description.lowercaseString.rangeOfString("out of area") != nil {
-          print("out of area")
-          let storyboard = UIStoryboard(name: "Main", bundle: nil)
-          self.requestButton.enabled = true
-          let vc : OutOfBoundsViewController = storyboard.instantiateViewControllerWithIdentifier("OutOfBoundsViewController") as! OutOfBoundsViewController
-          vc.reallocation = self.reallocation
-          self.presentViewController(vc, animated: true, completion: nil)
-        }
-        
-      }
-      
-      self.requestButton.enabled = true
-    })
+//    PFCloud.callFunctionInBackground("request", withParameters: params as [NSObject : AnyObject], block: { (object: AnyObject?, error) -> Void in
+//      if error == nil {
+//        
+//        self.goToReq()
+//        
+//      } else {
+//        
+//        // alternative: not case sensitive
+//        if error?.description.lowercaseString.rangeOfString("out of area") != nil {
+//          print("out of area")
+//          let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//          self.requestButton.enabled = true
+//          let vc : OutOfBoundsViewController = storyboard.instantiateViewControllerWithIdentifier("OutOfBoundsViewController") as! OutOfBoundsViewController
+//          vc.reallocation = self.reallocation
+//          self.presentViewController(vc, animated: true, completion: nil)
+//        }
+//        
+//      }
+//      
+//      self.requestButton.enabled = true
+//    })
   }
   
   let regionRadius: CLLocationDistance = 1000
@@ -232,6 +250,8 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
         
         self.addressTextView.text = nameArr[0]
         self.reallocation = ["lat":latitudeText,"long":longitudeText, "address":ABCreateStringWithAddressDictionary(pm.addressDictionary!, false) ]
+        self.locText = ABCreateStringWithAddressDictionary(pm.addressDictionary!,false)
+        
       }
       else {
         NSLog("Problem with the data received from geocoder")
@@ -273,6 +293,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
           
           self.addressTextView.text = nameArr[0]
           self.reallocation = ["lat":latitudeText,"long":longitudeText, "address":ABCreateStringWithAddressDictionary(pm.addressDictionary!, false) ]
+          self.locText = ABCreateStringWithAddressDictionary(pm.addressDictionary!,false)
         }
         else {
           NSLog("Problem with the data received from geocoder")
