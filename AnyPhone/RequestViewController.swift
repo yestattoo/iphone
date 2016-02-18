@@ -171,6 +171,7 @@ class RequestViewController: UIViewController, CLLocationManagerDelegate, UIText
       refreshAlert.message = "Your address has been updated. Please visit our website to request a Budhero to this address"
       refreshAlert.addButtonWithTitle("OK")
       refreshAlert.show()
+      requestButton.enabled = true
     }
     
     

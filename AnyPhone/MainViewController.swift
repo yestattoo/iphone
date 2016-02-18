@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import Google
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController , MultipleChoiceControllerDelegate {
 
   @IBOutlet weak var usernameLabel: UILabel!
   @IBOutlet weak var nameTextField: UITextField!
@@ -136,6 +136,32 @@ class MainViewController: UIViewController {
     )
   }
 
+  @IBAction func quizClick(sender: UIButton) {
+    
+    let vc = MultipleChoiceController(style: UITableViewStyle.Grouped)
+    vc.choices = ["Apples", "Oranges", "Bananas", "Oranges3", "Bananas3"] //Provide an array of choices. These must be NSObjects.
+    
+    vc.allowMultipleSelections = true
+    vc.maximumAllowedSelections = 2 // Optional, limits selection.
+    
+    vc.header = "Choose some fruits" // A header that appears before the list.
+    vc.footer = "Make sure to choose some delicious ones!" //A footer that appears after the list.
+    vc.delegate = self //Implement the MultipleChoiceControllerDelegate protocol to handle selections.
+    
+    self.presentViewController(vc, animated: true) { () -> Void in
+      
+      
+      
+    }    
+    
+  }
+  
+  /* Delegate method when selection is finished */
+  
+  func multipleChoiceController(controller: MultipleChoiceController, didSelectItems items: [NSObject]) {
+    //Do something with the "items" the user selected.
+    navigationController?.popViewControllerAnimated(true)
+  }
   @IBAction func clickedPrivacy(sender: UIButton) {
     if let url = NSURL(string: "http://www.budhero.com/privacy") {
       UIApplication.sharedApplication().openURL(url)

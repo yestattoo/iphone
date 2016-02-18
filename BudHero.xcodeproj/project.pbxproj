@@ -32,6 +32,7 @@
 		FA06ED461C56DE10009737BC /* location@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06ED441C56DE10009737BC /* location@3x.png */; };
 		FA06ED491C56DEB3009737BC /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06ED471C56DEB3009737BC /* profile@2x.png */; };
 		FA06ED4A1C56DEB3009737BC /* profile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA06ED481C56DEB3009737BC /* profile@3x.png */; };
+		FA2400B91C757C6600FB6903 /* MultipleChoiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2400B81C757C6600FB6903 /* MultipleChoiceController.swift */; };
 		FA3712871C5C681700C7D31E /* OutOfBoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3712861C5C681700C7D31E /* OutOfBoundsViewController.swift */; };
 		FA58651B1C4B258B003BD5D7 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58651A1C4B258B003BD5D7 /* OrderViewController.swift */; };
 		FA6232A11C4B3C2E004A2D02 /* blogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA6232A01C4B3C2E004A2D02 /* blogo.png */; };
@@ -81,6 +82,7 @@
 		FA06ED441C56DE10009737BC /* location@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location@3x.png"; sourceTree = "<group>"; };
 		FA06ED471C56DEB3009737BC /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
 		FA06ED481C56DEB3009737BC /* profile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@3x.png"; sourceTree = "<group>"; };
+		FA2400B81C757C6600FB6903 /* MultipleChoiceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleChoiceController.swift; sourceTree = "<group>"; };
 		FA3712861C5C681700C7D31E /* OutOfBoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutOfBoundsViewController.swift; sourceTree = "<group>"; };
 		FA58651A1C4B258B003BD5D7 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		FA60F9401C56BBD300222DE1 /* BudHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BudHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				140DD2271AFB2A9C00B0A6BC /* MainViewController.swift */,
 				FAD880541C4B0D1100B45893 /* RequestViewController.swift */,
 				FA58651A1C4B258B003BD5D7 /* OrderViewController.swift */,
+				FA2400B81C757C6600FB6903 /* MultipleChoiceController.swift */,
 				0B1974F21B2FFDCC007F437C /* Main.storyboard */,
 				0B1974F61B2FFDD5007F437C /* LaunchScreen.xib */,
 				14EF4EF11B03ED3900DB301A /* Images.xcassets */,
@@ -369,6 +372,7 @@
 				140DD1EA1AFB132300B0A6BC /* InitialViewController.swift in Sources */,
 				FA58651B1C4B258B003BD5D7 /* OrderViewController.swift in Sources */,
 				FA0222D11C57125B0086C738 /* UpdateAddyViewController.swift in Sources */,
+				FA2400B91C757C6600FB6903 /* MultipleChoiceController.swift in Sources */,
 				FAD880551C4B0D1100B45893 /* RequestViewController.swift in Sources */,
 				FAD255071C56FA530034AB90 /* SearchHistoryManager.swift in Sources */,
 				FAD255041C56FA530034AB90 /* Location.swift in Sources */,
